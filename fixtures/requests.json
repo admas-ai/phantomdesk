@@ -1,0 +1,51 @@
+{
+  "dataOrigin": "wholly synthetic; no real addresses or people intended",
+  "schemaVersion": 1,
+  "records": [
+    {
+      "id": "DEMO-001",
+      "address": "12 Sample Street",
+      "unit": "4",
+      "category": "repair",
+      "description": "A cupboard door is loose.",
+      "preferredTime": "Tuesday 10:00\u201312:00",
+      "expected": "Needs review"
+    },
+    {
+      "id": "DEMO-002",
+      "address": "18 Example Road",
+      "unit": "",
+      "category": "repair",
+      "description": "A cupboard door is loose.",
+      "preferredTime": "Wednesday 10:00\u201312:00",
+      "expected": "Needs information"
+    },
+    {
+      "id": "DEMO-003",
+      "address": "20 Example Road",
+      "unit": "2",
+      "category": "plumbing",
+      "description": "Possible water leak at the sink.",
+      "preferredTime": "Today",
+      "expected": "Needs review: demo escalation rule"
+    },
+    {
+      "id": "DEMO-004",
+      "address": " 12 SAMPLE street ",
+      "unit": "4",
+      "category": "repair",
+      "description": "A cupboard door is loose.",
+      "preferredTime": "Tuesday 10:00\u201312:00",
+      "expected": "Possible duplicate with DEMO-001; retain both"
+    },
+    {
+      "id": "DEMO-005",
+      "address": "42 Fiction Lane",
+      "unit": "1",
+      "category": "landscaping",
+      "description": "Trim a hedge.",
+      "preferredTime": "Friday",
+      "expected": "Out of scope"
+    }
+  ]
+}
