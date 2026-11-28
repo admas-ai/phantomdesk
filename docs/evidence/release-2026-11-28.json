@@ -1,7 +1,7 @@
 {
   "report": "PhantomDesk verified public release checkpoint",
   "date": "2026-11-28",
-  "scope": "Observed deployment, public-source comparison and YouTube publication; not a Devpost submission receipt or an eligibility determination.",
+  "scope": "Observed deployment, public-source comparison, YouTube publication and Devpost submission confirmation; not an eligibility or award determination.",
   "application": {
     "url": "https://phantomdesk.neighborlyhydrangea16.chatgpt.site/",
     "deployment_status": "succeeded",
@@ -34,7 +34,7 @@
   "video": {
     "url": "https://www.youtube.com/watch?v=raMvzOlu98o",
     "youtube_id": "raMvzOlu98o",
-    "title": "PhantomDesk \u2014 Change the Instructions, Break the Seal | Kiroween 2026",
+    "title": "PhantomDesk — Change the Instructions, Break the Seal | Kiroween 2026",
     "channel": "Admas Academy",
     "channel_handle": "@AdmasAcademy1",
     "published_date": "2026-11-28",
@@ -87,20 +87,27 @@
   },
   "devpost": {
     "authenticated_in_current_session": true,
-    "draft_verified_this_session": false,
-    "submission_receipt_verified": false,
-    "status": "Sign-in succeeded for the existing account. A CAPTCHA appeared before draft creation; no challenge response, draft or submission receipt is claimed."
+    "draft_verified_this_session": true,
+    "submission_confirmation_verified": true,
+    "status": "Submitted to Kiroween 2026",
+    "public_url": "https://devpost.com/software/phantomdesk",
+    "submission_id": 1323609,
+    "observed_at": "2026-11-28T07:48:30Z",
+    "entrant_type": "Individual",
+    "category": "Costume Contest",
+    "bonus_category": "Best Startup Project",
+    "bonus_form_label": "Startup Project",
+    "evidence": "devpost-submission-2026-11-28.json",
+    "authorization": "The user confirmed the required declarations and authorized agreement and submission.",
+    "interpretation": "Submitted status is verified; organizer eligibility and award decisions are not implied."
   },
-  "pending_completion": [
-    "Publish the final release-status documentation and release record.",
-    "Complete Devpost CAPTCHA verification and required entry fields.",
-    "Verify actual submitted status and retain a receipt."
-  ],
   "remaining_verification_limits": [
     "Cloud perceptual watch playback was not verified because the player buffered.",
     "Signed-out YouTube playback was not verified.",
     "Listening review was not performed.",
     "Broader application verification limits remain in BUILD-STATUS.md and the acceptance matrix."
   ],
-  "earlier_checkpoint_note": "ui-checks-2026-11-28.json retains the earlier publication checkpoint from the local UI run. This release record supersedes its source, deployment and video publication status."
+  "earlier_checkpoint_note": "ui-checks-2026-11-28.json retains the earlier publication checkpoint from the local UI run. This release record supersedes its source, deployment, video and Devpost submission status.",
+  "submission_confirmation_observed_at": "2026-11-28T07:48:30Z",
+  "submission_completion": "Completed; confirmation evidence recorded. This documentation update follows the public-source verification checkpoint."
 }

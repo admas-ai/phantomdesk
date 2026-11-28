@@ -1,0 +1,51 @@
+{
+  "report": "PhantomDesk observed Devpost submission confirmation",
+  "observedAt": "2026-11-28T07:48:30Z",
+  "observation_time_note": "The final submit action occurred shortly before this observation, approximately 07:48 UTC. This timestamp records the observed confirmation, not an asserted exact click time.",
+  "publicURL": "https://devpost.com/software/phantomdesk",
+  "submissionID": 1323609,
+  "hackathon": "Kiroween 2026",
+  "status": "submitted",
+  "entrantType": "Individual",
+  "categories": [
+    {
+      "category": "Costume Contest",
+      "selection_saved": true
+    },
+    {
+      "bonus": "Best Startup Project",
+      "form_label": "Startup Project",
+      "selection_saved": true
+    }
+  ],
+  "successUI": {
+    "toast": "Project submitted! Continue to edit your project until the hackathon deadline: December 04, 2026 at 05:00pm EST.",
+    "navigated_to": "https://devpost.com/software/phantomdesk",
+    "sidebar_label": "SUBMITTED TO",
+    "sidebar_hackathon": "Kiroween 2026",
+    "available_action": "Edit hackathon submission"
+  },
+  "savedAndPreviewVerified": {
+    "application_url": "https://phantomdesk.neighborlyhydrangea16.chatgpt.site/",
+    "repository_url": "https://github.com/admas-ai/phantomdesk",
+    "video_url": "https://www.youtube.com/watch?v=raMvzOlu98o",
+    "project_story": true,
+    "screenshot_count": 4,
+    "thumbnail": true
+  },
+  "authorization": "The user confirmed the required declarations and explicitly authorized agreement and submission.",
+  "privacy": "Personal eligibility answers are intentionally omitted from this public evidence record.",
+  "interpretation": "Observed submission confirmation only. This is not a guarantee of organizer eligibility approval, finalist selection, a prize or any other judging outcome.",
+  "verification_limits_preserved": [
+    "The YouTube cloud watch player remained buffering; perceptual playback and signed-out playback were not verified.",
+    "Listening review was not performed.",
+    "Broader application verification limits remain documented in BUILD-STATUS.md and acceptance-checks.json."
+  ],
+  "receiptScreenshot": {
+    "filename": "devpost-submitted-receipt.jpg",
+    "sha256": "685926bcdffd231d54d477df14381d93e32c2a471c6584ec55f4d8a7647948e4",
+    "bytes": 102571,
+    "included_in_repository": false,
+    "retention": "Saved separately from the public repository."
+  }
+}
