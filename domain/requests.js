@@ -372,6 +372,132 @@ function csvCell(value) {
   return `"${text.replaceAll('"', '""')}"`;
 }
 
+function comparisonConditionsShape(conditions) {
+  if (!Array.isArray(conditions)) return false;
+  const ids = new Set();
+  return conditions.every((condition) => {
+    if (!plainObject(condition) || typeof condition.id !== 'string' || !condition.id
+      || ids.has(condition.id) || !['duplicate', 'sample-leak'].includes(condition.type)
+      || typeof condition.ruleId !== 'string' || typeof condition.text !== 'string'
+      || typeof condition.fingerprint !== 'string'
+      || (condition.type === 'duplicate' && (typeof condition.counterpartId !== 'string' || !condition.counterpartId))
+      || !(condition.resolution === null || (plainObject(condition.resolution)
+        && ['reason', 'actor', 'at'].every((key) => typeof condition.resolution[key] === 'string'
+          && condition.resolution[key].trim())))) return false;
+    ids.add(condition.id);
+    return true;
+  });
+}
+
+function comparisonStateShape(value) {
+  return plainObject(value) && Number.isSafeInteger(value.revision) && value.revision > 0
+    && plainObject(value.fields) && FIELD_KEYS.every((key) => typeof value.fields[key] === 'string')
+    && PRIORITIES.includes(value.priority) && comparisonConditionsShape(value.conditions);
+}
+
+function approvalShape(approval) {
+  if (!plainObject(approval) || !Number.isSafeInteger(approval.revision) || approval.revision < 1
+    || typeof approval.at !== 'string' || !approval.at.trim() || Number.isNaN(Date.parse(approval.at))
+    || typeof approval.actor !== 'string' || !approval.actor.trim()
+    || !comparisonStateShape(approval.snapshot)
+    || approval.snapshot.revision !== approval.revision
+    || typeof approval.snapshot.ruleSetVersion !== 'string' || !approval.snapshot.ruleSetVersion) {
+    fail('INVALID_SNAPSHOT', 'The approval snapshot has an invalid structure.');
+  }
+}
+
+function comparisonRecordShape(record) {
+  if (!comparisonStateShape(record) || typeof record.id !== 'string' || !record.id.trim()
+    || !(record.approval === null || plainObject(record.approval))) {
+    fail('INVALID_RECORD', 'The current saved record has an invalid structure.');
+  }
+}
+
+const approvalKey = (record, approval) => JSON.stringify([record.id, approval.revision, approval.at]);
+
+/** Current and preserved approvals, newest first. The stable key is scoped to a
+ * record; callers also retain their workspace/record selection context. Results
+ * are independent copies and do not change the stored history representation. */
+export function listApprovals(record) {
+  comparisonRecordShape(record);
+  if (!Array.isArray(record.history)) fail('INVALID_RECORD', 'The saved approval history is invalid.');
+  const candidates = [record.approval];
+  for (const entry of record.history) {
+    if (!plainObject(entry)) fail('INVALID_SNAPSHOT', 'The saved approval history contains an invalid entry.');
+    candidates.push(entry.after?.approval, entry.approval);
+  }
+  const approvals = new Map();
+  const currentKey = record.approval ? approvalKey(record, record.approval) : null;
+  for (const approval of candidates) {
+    if (approval === null || approval === undefined) continue;
+    approvalShape(approval);
+    const key = approvalKey(record, approval);
+    if (!approvals.has(key)) approvals.set(key, {
+      key,
+      approval: copy(approval),
+      isCurrent: key === currentKey,
+    });
+  }
+  return [...approvals.values()].sort((a, b) => b.approval.revision - a.approval.revision
+    || a.key.localeCompare(b.key));
+}
+
+/** Compare a { approval } option or preserved history entry with a saved record.
+ * Each condition includes independent approved/current values, with null for
+ * an absent side. Selection and returned-data edits cannot mutate saved state. */
+export function compareApprovals(snapshotEntry, currentRecord) {
+  if (!plainObject(snapshotEntry)) fail('INVALID_SNAPSHOT', 'Choose a saved approval snapshot.');
+  const approval = snapshotEntry.approval;
+  approvalShape(approval);
+  comparisonRecordShape(currentRecord);
+  const snap = approval.snapshot;
+  const fieldComparisons = FIELD_KEYS.map((key) => ({
+    key,
+    label: FIELD_LABELS[key],
+    approved: snap.fields[key],
+    current: currentRecord.fields[key],
+    changed: snap.fields[key] !== currentRecord.fields[key],
+  }));
+
+  const approvedCondMap = new Map(snap.conditions.map((condition) => [condition.id, condition]));
+  const currentCondMap = new Map(currentRecord.conditions.map((condition) => [condition.id, condition]));
+  const allIds = new Set([...approvedCondMap.keys(), ...currentCondMap.keys()]);
+  const conditions = [...allIds].sort().map((id) => {
+    const approved = approvedCondMap.get(id) ?? null;
+    const current = currentCondMap.get(id) ?? null;
+    const changed = !same(approved, current);
+    const change = !approved ? 'added' : !current ? 'removed' : changed ? 'modified' : 'unchanged';
+    let note = '';
+    if (change === 'added') {
+      const subject = current.type === 'duplicate' ? `: possible duplicate of ${current.counterpartId}` : '';
+      note = `New condition since approval${subject}. ${current.resolution
+        ? 'Reviewed in the current saved revision.' : 'This requires a new review.'}`;
+    } else if (change === 'removed') {
+      note = `This condition was present at approval (revision ${approval.revision}) and is no longer flagged.`;
+    } else if (change === 'modified') {
+      const basisChanged = ['type', 'ruleId', 'text', 'counterpartId', 'fingerprint']
+        .some((key) => approved[key] !== current[key]);
+      note = basisChanged ? 'The condition changed since this approval.' : 'The recorded review changed since this approval.';
+      note += current.resolution ? ' Reviewed in the current saved revision.' : ' This requires a new review.';
+    }
+    return { id, approved: copy(approved), current: copy(current), changed, change, note };
+  });
+
+  return {
+    approvalKey: approvalKey(currentRecord, approval),
+    approvedRevision: approval.revision,
+    approvedAt: approval.at,
+    approvedActor: approval.actor,
+    currentRevision: currentRecord.revision,
+    currentStatus: recordStatus(currentRecord),
+    fields: fieldComparisons,
+    priorityApproved: snap.priority,
+    priorityCurrent: currentRecord.priority,
+    priorityChanged: snap.priority !== currentRecord.priority,
+    conditions,
+  };
+}
+
 export function createCSV(workspace, preview) {
   workspaceShape(workspace);
   if (!Array.isArray(preview)) fail('INVALID_PREVIEW', 'Create an export preview before downloading.');
