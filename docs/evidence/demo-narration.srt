@@ -1,0 +1,171 @@
+1
+00:00:00,256 --> 00:00:02,205
+When maintenance instructions change,
+
+2
+00:00:02,261 --> 00:00:04,652
+what exactly does an approval still cover?
+
+3
+00:00:04,907 --> 00:00:07,987
+PhantomDesk is a review desk for a maintenance coordinator.
+
+4
+00:00:08,022 --> 00:00:09,685
+Its haunted records-office theme
+
+5
+00:00:09,686 --> 00:00:11,294
+makes one rule visible:
+
+6
+00:00:11,435 --> 00:00:14,209
+approval belongs to an exact saved revision.
+
+7
+00:00:14,464 --> 00:00:16,639
+This synthetic request is missing a unit,
+
+8
+00:00:16,640 --> 00:00:17,992
+so approval is blocked.
+
+9
+00:00:18,048 --> 00:00:20,053
+I add unit three, save,
+
+10
+00:00:20,054 --> 00:00:21,902
+and approve the saved instructions.
+
+11
+00:00:22,156 --> 00:00:25,258
+The intact seal now identifies the approved revision.
+
+12
+00:00:25,484 --> 00:00:27,775
+Here is the request in the export preview.
+
+13
+00:00:27,831 --> 00:00:29,290
+I leave the preview open,
+
+14
+00:00:29,324 --> 00:00:31,515
+change the instructions, and save.
+
+15
+00:00:31,799 --> 00:00:32,874
+The seal breaks.
+
+16
+00:00:32,908 --> 00:00:34,737
+The old approval stays in history.
+
+17
+00:00:34,843 --> 00:00:37,411
+Trying to download the earlier preview is blocked,
+
+18
+00:00:37,446 --> 00:00:40,632
+because the stored request no longer matches what was approved.
+
+19
+00:00:40,944 --> 00:00:46,574
+The approval inspector lets me select a preserved approval and compare every field with the current saved record.
+
+20
+00:00:46,727 --> 00:00:49,742
+Changed and unchanged labels explain the difference.
+
+21
+00:00:49,798 --> 00:00:54,109
+An unsaved draft is clearly marked and stays separate from the saved comparison.
+
+22
+00:00:54,364 --> 00:00:59,393
+After reviewing and approving the new revision, I refresh the preview and download a CSV.
+
+23
+00:00:59,456 --> 00:01:02,399
+Its instructions, revision, and approval time
+
+24
+00:01:02,400 --> 00:01:03,766
+match the saved approval.
+
+25
+00:01:03,936 --> 00:01:07,059
+A later matching request creates another review condition.
+
+26
+00:01:07,264 --> 00:01:08,970
+Both requests stay in the ledger,
+
+27
+00:01:08,971 --> 00:01:11,061
+and the earlier approval expires.
+
+28
+00:01:11,214 --> 00:01:14,685
+Resolving one pair does not automatically resolve a third request.
+
+29
+00:01:14,969 --> 00:01:17,613
+The app uses JavaScript and the browser's database,
+
+30
+00:01:17,614 --> 00:01:19,649
+with no runtime AI service.
+
+31
+00:01:19,876 --> 00:01:22,069
+Codex authored the original prototype.
+
+32
+00:01:22,156 --> 00:01:25,312
+Kiro CLI implemented the approval comparison helper,
+
+33
+00:01:25,313 --> 00:01:27,488
+historical selector, styles,
+
+34
+00:01:27,489 --> 00:01:29,865
+and additional tests from the project brief.
+
+35
+00:01:29,964 --> 00:01:33,044
+Independent Codex review corrected comparison details,
+
+36
+00:01:33,164 --> 00:01:35,762
+selection stability, and draft behavior.
+
+37
+00:01:35,826 --> 00:01:37,989
+Automated checks and browser verification
+
+38
+00:01:38,087 --> 00:01:39,937
+cover the demonstrated workflow.
+
+39
+00:01:40,135 --> 00:01:42,405
+This prototype stores records on this device.
+
+40
+00:01:42,439 --> 00:01:45,114
+Reviewer labels are not authenticated identities.
+
+41
+00:01:45,341 --> 00:01:47,239
+Try changing an approved request.
+
+42
+00:01:47,457 --> 00:01:49,150
+The old approval stays visible.
+
+43
+00:01:49,249 --> 00:01:52,002
+The changed instructions have to earn a new seal.

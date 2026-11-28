@@ -1,0 +1,157 @@
+{
+  "report": "PhantomDesk scoped actual-browser UI observations",
+  "observed_date": "2026-11-28",
+  "method": "Operator-driven real-browser walkthrough of the local revised candidate; this JSON is an observation record, not an automated UI test-run output.",
+  "data": "Wholly synthetic demonstration records; no customer or production data.",
+  "candidate_scope": "Final local application code after independent review and the repeated cross-tab status fix. The public site still serves the November 25 prototype at this checkpoint.",
+  "domain_validation": {
+    "command": "node --test",
+    "passed": 42,
+    "failed": 0,
+    "operator": "Codex-operated tools",
+    "observed_date": "2026-11-28"
+  },
+  "repository_validation": {
+    "artifact": "browser-checks-2026-11-28.json",
+    "started_at": "2026-11-28T07:02:32.840Z",
+    "finished_at": "2026-11-28T07:02:32.943Z",
+    "passed": 9,
+    "failed": 0,
+    "scope": "Repository storage behavior only; application interface not verified."
+  },
+  "ui_checks": [
+    {
+      "id": "missing_information_and_approval",
+      "result": "passed",
+      "observed": "DEMO-002 was missing unit and approval was blocked. Unit 3 was saved as revision 2, then approval created revision 3."
+    },
+    {
+      "id": "unsaved_draft_is_distinct",
+      "result": "passed",
+      "observed": "Typing an unsaved instruction change immediately showed the draft note. The comparison stayed on saved revision 3 and download was disabled."
+    },
+    {
+      "id": "saved_edit_breaks_approval",
+      "result": "passed",
+      "observed": "Saving changed instructions produced revision 4, broke the seal and preserved approved revision 3."
+    },
+    {
+      "id": "actual_stale_download",
+      "result": "passed",
+      "observed": "A real download attempt using the earlier export preview was blocked after the saved edit."
+    },
+    {
+      "id": "historical_selector_readonly",
+      "result": "passed",
+      "observed": "Reapproval created revision 5. Current approval 5 and older approval 3 each appeared once. Selecting the older approval retained native keyboard focus and did not mutate history or approval state."
+    },
+    {
+      "id": "actual_csv_download",
+      "result": "passed",
+      "observed": "A refreshed preview downloaded the inspected CSV for approved revision 5. Instructions, request ID, revision and approval timestamp matched the saved approval.",
+      "artifact": "approved-revision-2026-11-28.csv"
+    },
+    {
+      "id": "later_duplicate_invalidates_approval",
+      "result": "passed",
+      "observed": "Creating REQ-57263399-ce4c-4008-8cda-47e7ebb25825 advanced DEMO-002 to revision 6, invalidated approval, identified the new unresolved counterpart and retained both records."
+    },
+    {
+      "id": "condition_absence_and_resolution",
+      "result": "passed",
+      "observed": "Resolving the relationship created revision 7; approval created revision 8. The selected older approval showed the condition absent. The current side showed the resolved condition and recorded reason truthfully, without a false pending-review claim.",
+      "recorded_reason": "These are two separate cupboard doors in the same synthetic unit; keep both requests."
+    },
+    {
+      "id": "cross_tab_saved_refresh",
+      "result": "passed",
+      "observed": "With approval 3 selected and a dirty draft visible, another tab changed preferred time to Thursday, creating saved revision 9. The comparison refreshed to 9 while the draft base, draft text and focus were retained. Saving the stale draft was rejected."
+    },
+    {
+      "id": "discard_restores_current",
+      "result": "passed",
+      "observed": "Discarding the retained draft restored the latest saved values and removed the dirty-draft note."
+    },
+    {
+      "id": "cross_tab_status_repeat_after_fix",
+      "result": "passed",
+      "observed": "The initial cross-tab run exposed stale approval-button, editor metadata and seal text. After the UI-only correction, approval created revision 10 and a dirty draft was started. Another tab changed preferred time to Friday, creating revision 11. The repeat showed draft base 10 / latest saved 11, Needs review, Save or discard draft, the broken revision-11 seal and retained approval-3 selection.",
+      "operator_capture": "09-unsaved-draft-comparison.jpg"
+    },
+    {
+      "id": "narrow_comparison_layout",
+      "result": "passed",
+      "observed": "In a 360 CSS-pixel iframe the document did not overflow horizontally. Comparison sides stacked with explicit revision labels, and the long duplicate UUID wrapped.",
+      "operator_captures": [
+        "11-mobile-comparison.jpg",
+        "12-mobile-conditions.jpg"
+      ]
+    }
+  ],
+  "csv_rows_inspected": [
+    {
+      "request_id": "DEMO-002",
+      "approved_revision": "5",
+      "address": "18 Example Road",
+      "unit": "3",
+      "category": "repair",
+      "work_instructions": "Tighten the cupboard hinges. Do not replace the door.",
+      "priority": "normal",
+      "preferred_time": "Wednesday 10:00–12:00",
+      "approved_at": "2026-11-28T06:48:02.361Z",
+      "rule_set_version": "phantomdesk-demo-1"
+    }
+  ],
+  "layout_measurements": {
+    "iframe_width_css_px": 360,
+    "document_client_width_css_px": 345,
+    "document_scroll_width_css_px": 345,
+    "scrollbar_width_css_px": 15,
+    "comparison_bounding_width_css_px": 285,
+    "comparison_scroll_width_css_px": 283,
+    "physical_device_test": false,
+    "browser_zoom_200_percent_verified": false
+  },
+  "copied_artifacts": [
+    {
+      "path": "browser-checks-2026-11-28.json",
+      "source_capture_name": "browser-checks-2026-11-28.json",
+      "sha256": "7ae32d8c6e84380f678e638387bd1e3b96eaaa2d3effddfa002a6128128ca300"
+    },
+    {
+      "path": "approved-revision-2026-11-28.csv",
+      "source_capture_name": "approved-revision-2026-11-28.csv",
+      "sha256": "c0f651c2909f28d1d12fd51f9ad24f80991ec6f8ff2eca81c797b380df0f9b94"
+    },
+    {
+      "path": "approval-comparison-2026-11-28.jpg",
+      "source_capture_name": "06-saved-comparison.jpg",
+      "sha256": "d2f5f029759c915935e437e6fedac1fffd4187e3ff5ef81822691b496b3e2076"
+    }
+  ],
+  "capture_note": "Only approval-comparison-2026-11-28.jpg is copied into this repository. Other operator_capture names identify retained recording material and are not additional bundled repository files.",
+  "unverified": [
+    "Actual 200% browser zoom",
+    "Full accessibility and assistive-technology coverage",
+    "Exhaustive keyboard, dialog and export navigation",
+    "Reduced-motion preference-specific browser behavior",
+    "Active untrusted HTML/event payload in the UI",
+    "Retained UI draft during an injected transaction-abort or storage failure",
+    "Physical mobile-device behavior"
+  ],
+  "publication_checkpoint": {
+    "public_site": "https://phantomdesk.neighborlyhydrangea16.chatgpt.site/",
+    "public_site_version": "November 25 prototype; revised deployment underway, not yet verified",
+    "source_repository": "https://github.com/admas-ai/phantomdesk",
+    "source_status": "Revised runtime code published and verified; updated documentation publication pending.",
+    "narration_words": 288,
+    "voice_duration_seconds": 112.003,
+    "final_mp4": "pending",
+    "public_youtube_url": null,
+    "devpost_receipt": null,
+    "verified_runtime_commit": "798f09459222a75c56ab276350f5ee6788e767d5",
+    "verified_runtime_commit_url": "https://github.com/admas-ai/phantomdesk/commit/798f09459222a75c56ab276350f5ee6788e767d5",
+    "devpost_status": "Current browser requires sign-in; final entry and receipt pending."
+  },
+  "interpretation": "These scoped technical observations are not a submission receipt, a contest-eligibility determination, or a claim that every unverified product check is a mandatory contest gate."
+}

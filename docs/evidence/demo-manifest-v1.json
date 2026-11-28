@@ -1,0 +1,292 @@
+{
+  "audio": "media/narration-original.wav",
+  "duration": 114.0,
+  "pad_tail_silence": true,
+  "srt": "demo-narration.srt",
+  "format": "Edited narrated walkthrough of actual CUA captures; not a continuous screen recording.",
+  "clips": [
+    {
+      "image": "media/captures/02-approved-revision.jpg",
+      "start": 0,
+      "end": 4.907,
+      "heading": "When instructions change, what does approval cover?"
+    },
+    {
+      "image": "media/captures/02-approved-revision.jpg",
+      "start": 4.907,
+      "end": 11.435,
+      "heading": "A maintenance coordinator’s review desk",
+      "crop": [
+        178,
+        0,
+        1152,
+        926
+      ]
+    },
+    {
+      "image": "media/captures/02-approved-revision.jpg",
+      "start": 11.435,
+      "end": 14.464,
+      "heading": "Approval belongs to an exact saved revision",
+      "crop": [
+        592,
+        316,
+        717,
+        584
+      ]
+    },
+    {
+      "image": "media/captures/01-missing-unit.jpg",
+      "start": 14.464,
+      "end": 18.048,
+      "heading": "Missing unit · the request needs information",
+      "crop": [
+        602,
+        328,
+        697,
+        550
+      ]
+    },
+    {
+      "image": "media/captures/02-approved-revision.jpg",
+      "start": 18.048,
+      "end": 25.484,
+      "heading": "Unit 3 saved · revision 3 approved",
+      "crop": [
+        592,
+        316,
+        717,
+        584
+      ]
+    },
+    {
+      "image": "media/captures/03-approved-preview.jpg",
+      "start": 25.484,
+      "end": 29.324,
+      "heading": "An export preview preserves the approved revision",
+      "crop": [
+        202,
+        622,
+        1107,
+        304
+      ]
+    },
+    {
+      "image": "media/captures/05-broken-seal.jpg",
+      "start": 29.324,
+      "end": 31.799,
+      "heading": "Changed instructions saved as revision 4",
+      "crop": [
+        592,
+        316,
+        717,
+        584
+      ]
+    },
+    {
+      "image": "media/captures/05-broken-seal.jpg",
+      "start": 31.799,
+      "end": 34.843,
+      "heading": "The previous seal no longer applies",
+      "crop": [
+        592,
+        316,
+        717,
+        584
+      ]
+    },
+    {
+      "image": "media/captures/04-stale-download-blocked.jpg",
+      "start": 34.843,
+      "end": 37.446,
+      "heading": "The stale download is blocked",
+      "crop": [
+        202,
+        0,
+        1107,
+        714
+      ]
+    },
+    {
+      "image": "media/captures/04-stale-download-blocked.jpg",
+      "start": 37.446,
+      "end": 40.944,
+      "heading": "The earlier preview cannot authorize changed instructions",
+      "crop": [
+        824,
+        225,
+        485,
+        420
+      ]
+    },
+    {
+      "image": "media/captures/06-saved-comparison.jpg",
+      "start": 40.944,
+      "end": 49.798,
+      "heading": "Approved revision 3 compared with saved revision 4",
+      "crop": [
+        611,
+        301,
+        678,
+        606
+      ]
+    },
+    {
+      "image": "media/captures/09-unsaved-draft-comparison.jpg",
+      "start": 49.798,
+      "end": 54.364,
+      "heading": "Separate inspector check · unsaved draft",
+      "crop": [
+        611,
+        298,
+        678,
+        432
+      ]
+    },
+    {
+      "image": "media/captures/07-approved-download.jpg",
+      "start": 54.364,
+      "end": 59.456,
+      "heading": "Main walkthrough · approved revision 5",
+      "crop": [
+        202,
+        88,
+        1107,
+        583
+      ]
+    },
+    {
+      "image": "media/captures/07-approved-download.jpg",
+      "start": 59.456,
+      "end": 63.936,
+      "heading": "CSV verified against the saved approval",
+      "crop": [
+        824,
+        88,
+        485,
+        522
+      ]
+    },
+    {
+      "image": "media/captures/08-later-duplicate.jpg",
+      "start": 63.936,
+      "end": 71.214,
+      "heading": "A new matching request requires a new review",
+      "crop": [
+        202,
+        276,
+        1107,
+        631
+      ]
+    },
+    {
+      "image": "media/captures/08-later-duplicate.jpg",
+      "start": 71.214,
+      "end": 74.969,
+      "heading": "Pair-specific review · third-request rule tested",
+      "crop": [
+        611,
+        276,
+        678,
+        631
+      ]
+    },
+    {
+      "image": "media/captures/02-approved-revision.jpg",
+      "start": 74.969,
+      "end": 79.876,
+      "heading": "JavaScript + IndexedDB · no runtime AI service"
+    },
+    {
+      "image": "media/captures/02-approved-revision.jpg",
+      "start": 79.876,
+      "end": 82.156,
+      "heading": "Codex authored the original prototype"
+    },
+    {
+      "image": "media/captures/14-kiro-evidence.jpg",
+      "start": 82.156,
+      "end": 89.964,
+      "heading": "Kiro CLI · comparison, selector, styles and tests",
+      "crop": [
+        155,
+        105,
+        1022,
+        473
+      ]
+    },
+    {
+      "image": "media/captures/14-kiro-evidence.jpg",
+      "start": 89.964,
+      "end": 95.826,
+      "heading": "Codex review · corrections and regression checks",
+      "crop": [
+        155,
+        105,
+        1022,
+        473
+      ]
+    },
+    {
+      "image": "media/captures/13-browser-checks.jpg",
+      "start": 95.826,
+      "end": 100.135,
+      "heading": "Actual browser verification · 9 passed, 0 failed",
+      "crop": [
+        190,
+        35,
+        955,
+        687
+      ]
+    },
+    {
+      "image": "media/captures/02-approved-revision.jpg",
+      "start": 100.135,
+      "end": 102.439,
+      "heading": "Prototype limit · records stay on this device"
+    },
+    {
+      "image": "media/captures/06-saved-comparison.jpg",
+      "start": 102.439,
+      "end": 105.341,
+      "heading": "Reviewer labels are not authenticated identities",
+      "crop": [
+        600,
+        0,
+        705,
+        278
+      ]
+    },
+    {
+      "image": "media/captures/05-broken-seal.jpg",
+      "start": 105.341,
+      "end": 107.457,
+      "heading": "Change the instructions. Review the new revision.",
+      "crop": [
+        592,
+        316,
+        717,
+        584
+      ]
+    },
+    {
+      "image": "media/captures/06-saved-comparison.jpg",
+      "start": 107.457,
+      "end": 109.249,
+      "heading": "The old approval stays visible in history",
+      "crop": [
+        611,
+        301,
+        678,
+        606
+      ]
+    },
+    {
+      "image": "media/captures/02-approved-revision.jpg",
+      "start": 109.249,
+      "end": 114,
+      "heading": "Every instruction deserves a current approval."
+    }
+  ],
+  "media_note": "Relative media paths describe the production bundle. The large original media files are not duplicated in this source-only evidence folder."
+}

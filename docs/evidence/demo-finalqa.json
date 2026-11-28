@@ -1,0 +1,215 @@
+{
+  "created_utc": "2026-11-28T07:10:07.562991+00:00",
+  "video": {
+    "file": "phantomdesk-demo-v1.mp4",
+    "bytes": 5500994,
+    "sha256": "bf6a6c64494bf6fcda2d78f8452eb534c7a478406183678d45e581f33c851698",
+    "duration_seconds": 114.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 24,
+    "frames": 2736,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "audio_codec": "aac",
+    "audio_sample_rate_hz": 48000,
+    "audio_channels": 1,
+    "full_decode": "passed"
+  },
+  "source_narration": {
+    "file": "narration-original.wav",
+    "sha256": "c88658deaab01d61219984baa75c9448ac18cfaed85621cbabf5907a8ed150cc",
+    "duration_seconds": 112.002971,
+    "speed": 1,
+    "tail_silence_added_seconds": 1.9970289999999977
+  },
+  "audio_signal_check": {
+    "source": {
+      "sample_count": 5376143,
+      "decoded_duration_seconds": 112.00297916666666,
+      "peak_dbfs": -0.13747591764224,
+      "rms_dbfs": -17.507849529452013,
+      "clipped_samples": 0
+    },
+    "final": {
+      "sample_count": 5472256,
+      "decoded_duration_seconds": 114.00533333333334,
+      "peak_dbfs": -0.22659207631070866,
+      "rms_dbfs": -17.592743014736556,
+      "clipped_samples": 0
+    },
+    "threshold_dbfs": -45,
+    "minimum_silence_seconds": 0.25,
+    "silence_intervals": [
+      {
+        "start": 0.0,
+        "end": 0.338396,
+        "duration": 0.338396
+      },
+      {
+        "start": 7.729437,
+        "end": 8.258771,
+        "duration": 0.529333
+      },
+      {
+        "start": 31.432437,
+        "end": 31.977271,
+        "duration": 0.544833
+      },
+      {
+        "start": 59.207667,
+        "end": 59.663292,
+        "duration": 0.455625
+      },
+      {
+        "start": 70.919792,
+        "end": 71.450937,
+        "duration": 0.531146
+      },
+      {
+        "start": 81.895729,
+        "end": 82.393333,
+        "duration": 0.497604
+      },
+      {
+        "start": 95.626125,
+        "end": 96.0685,
+        "duration": 0.442375
+      },
+      {
+        "start": 107.1045,
+        "end": 107.626688,
+        "duration": 0.522188
+      },
+      {
+        "start": 111.785271,
+        "end": 114.005333,
+        "duration": 2.220063
+      }
+    ],
+    "continuous_source_correlations": [
+      {
+        "region": "opening",
+        "start": 0,
+        "end": 15,
+        "zero_lag_correlation": 0.9999903250923667
+      },
+      {
+        "region": "middle",
+        "start": 45,
+        "end": 65,
+        "zero_lag_correlation": 0.999978392686942
+      },
+      {
+        "region": "last_spoken_section",
+        "start": 100,
+        "end": 112.002971,
+        "zero_lag_correlation": 0.999987874439616
+      }
+    ],
+    "assessment": "Nonzero audio signal present; complete source-length speech interval retained without timing shift, and ending is padded with silence. This signal check is not an auditory listening review."
+  },
+  "caption_check": {
+    "cues": 43,
+    "source_word_count": 289,
+    "covered_word_count": 289,
+    "timing_source": "Supplied HeyGen word and character timestamps",
+    "text_and_punctuation": "matched to supplied spoken script and original character timings",
+    "srt_sha256": "48c7489e61ed8231f146ad9f0a33c2d6c938a8bd9e3bcd70f687f233a8168e73",
+    "caption_band": "Separate lower band outside captured UI",
+    "reading_speed_warnings": [
+      {
+        "id": 19,
+        "duration": 5.63,
+        "cps": 20.07,
+        "text": "The approval inspector lets me select a preserved approval and compare every field with the current saved record."
+      }
+    ]
+  },
+  "visual_check": {
+    "source_capture_count": 11,
+    "edited_shots": 26,
+    "encoded_frames_extracted": 34,
+    "all_sampled_compositions_match": true,
+    "max_composition_mean_absolute_pixel_error": 2.0090370518755933,
+    "inspector_boundaries_sampled_seconds": [
+      49.798,
+      54.364
+    ],
+    "encoded_frame_review": "Completed by assistant visual inspection of 34 representative encoded frames, covering all 26 shots, both inspector-transition boundaries, the final caption, and the caption-free ending.",
+    "full_size_details_reviewed": [
+      {
+        "time": 39.166666667,
+        "detail": "Actual stale-download rejection and old preview revision remain readable."
+      },
+      {
+        "time": 44,
+        "detail": "Changed and unchanged saved-comparison fields remain visible; two-line caption is separate and not clipped."
+      },
+      {
+        "time": 52.041666667,
+        "detail": "Separate QA label, current saved revision 11, draft warning and preserved approval remain readable."
+      }
+    ],
+    "findings": "No observed caption clipping, app-evidence obstruction, unintended blank frame or distorted screenshot in sampled encoded frames.",
+    "encoded_frame_files": "Retained with production bundle; not duplicated in this source-only evidence folder.",
+    "sampled_frame_numbers": [
+      0,
+      58,
+      195,
+      310,
+      389,
+      522,
+      657,
+      733,
+      799,
+      867,
+      940,
+      1056,
+      1088,
+      1194,
+      1195,
+      1249,
+      1304,
+      1305,
+      1365,
+      1480,
+      1621,
+      1753,
+      1857,
+      1944,
+      2065,
+      2229,
+      2351,
+      2430,
+      2493,
+      2553,
+      2600,
+      2678,
+      2700,
+      2735
+    ]
+  },
+  "provenance": {
+    "format": "Edited narrated walkthrough of actual app captures; not a continuous screen recording.",
+    "data": "Synthetic demo records only.",
+    "separate_inspector_check": "49.798–54.364 seconds uses a separately labeled saved-revision-11 QA capture, then returns explicitly to the main revision-5 walkthrough.",
+    "third_request_claim": "A pair-specific rule verified by application tests; the displayed capture shows the actual two-request duplicate review state. No third-request screen or action was invented.",
+    "kiro_attribution": "Actual public KIRO-USAGE document capture distinguishes original Codex work, Kiro CLI implementation, and independent Codex corrections.",
+    "csv_evidence": {
+      "file": "approved-revision-2026-11-28.csv",
+      "sha256": "c0f651c2909f28d1d12fd51f9ad24f80991ec6f8ff2eca81c797b380df0f9b94",
+      "request_id": "DEMO-002",
+      "approved_revision": "5",
+      "work_instructions": "Tighten the cupboard hinges. Do not replace the door.",
+      "approved_at": "2026-11-28T06:48:02.361Z"
+    }
+  },
+  "listening_review": "not_performed",
+  "review_limits": [
+    "Audio signal and correlation checks do not establish pronunciation, pacing, naturalness or perceptual quality.",
+    "Static before/after captures do not show continuous pointer actions.",
+    "A spoken third-request guarantee is supported by implementation tests, not an extra demonstrated third-request capture."
+  ],
+  "verification_completed_utc": "2026-11-28T07:11:43.494566+00:00"
+}

@@ -1,0 +1,168 @@
+{
+  "created_utc": "2026-11-28T07:11:43.494566+00:00",
+  "format": "Edited narrated walkthrough of actual app captures; not a continuous screen recording.",
+  "data": "Synthetic demo records only.",
+  "output": {
+    "file": "phantomdesk-demo-v1.mp4",
+    "bytes": 5500994,
+    "sha256": "bf6a6c64494bf6fcda2d78f8452eb534c7a478406183678d45e581f33c851698",
+    "duration_seconds": 114.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 24,
+    "frames": 2736,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "audio_codec": "aac",
+    "audio_sample_rate_hz": 48000,
+    "audio_channels": 1,
+    "full_decode": "passed"
+  },
+  "editing": {
+    "shots": 26,
+    "source_captures": 11,
+    "transitions": "Straight cuts between real captured states; no simulated pointer actions or generated app screens.",
+    "sizing": "Explicit source-pixel crops or uniform contain; original aspect ratios preserved.",
+    "headings": "Explanatory text outside captured UI.",
+    "on_screen_disclosure": "Edited walkthrough · actual app captures · synthetic data",
+    "separate_inspector_check": "49.798–54.364 seconds uses a separately labeled saved-revision-11 QA capture, then returns explicitly to the main revision-5 walkthrough.",
+    "third_request_rule": "A pair-specific rule verified by application tests; the displayed capture shows the actual two-request duplicate review state. No third-request screen or action was invented."
+  },
+  "narration": {
+    "provider": "HeyGen",
+    "voice": "Annie - Lifelike",
+    "language": "English",
+    "synthesized_voice": true,
+    "source_duration_seconds": 112.002971,
+    "source_wav_sha256": "c88658deaab01d61219984baa75c9448ac18cfaed85621cbabf5907a8ed150cc",
+    "natural_speed": 1,
+    "speech_trimmed": false,
+    "trailing_silence_added_seconds": 1.9970289999999977,
+    "timing_basis": "Original word and character timestamps; not evenly distributed timing.",
+    "timing_data_sha256": "6ccf65f890b0385f873c604b45ab78c808032471743cc39327ab30e7a4e7b3cd",
+    "word_count": 289,
+    "subtitle_cues": 43,
+    "subtitle_file": "demo-narration.srt",
+    "subtitle_sha256": "48c7489e61ed8231f146ad9f0a33c2d6c938a8bd9e3bcd70f687f233a8168e73"
+  },
+  "renderer": {
+    "file": "../../tools/render-demo.py",
+    "sha256": "44aa6891392baefcbbe40f197768a71106051f9db0e4e26d8e86d4559fb966a0",
+    "dependencies": "Python 3.10+, Pillow, FFmpeg with libx264/drawtext, and ffprobe",
+    "manifest": "demo-manifest-v1.json",
+    "manifest_sha256": "ddf3befa27733617f6cbcb9ac3666db49b930978f9a08875afcfbeb157fa6e76",
+    "media_paths": "Relative to this evidence folder when the original media bundle is restored."
+  },
+  "captures": [
+    {
+      "file": "media/captures/02-approved-revision.jpg",
+      "sha256": "06b1af2ade71bd8da28a797ac1598fbe0bb58959ea828cd0bfc32fc60b8491e8",
+      "source_dimensions": [
+        1348,
+        926
+      ],
+      "source": "Actual CUA capture of the working app, browser-check page, or public Kiro attribution document."
+    },
+    {
+      "file": "media/captures/01-missing-unit.jpg",
+      "sha256": "ed96abf7ad83f12a8503d0e3d0c9b4dfff29242ef2d7da4ddfca2c9344531529",
+      "source_dimensions": [
+        1348,
+        926
+      ],
+      "source": "Actual CUA capture of the working app, browser-check page, or public Kiro attribution document."
+    },
+    {
+      "file": "media/captures/03-approved-preview.jpg",
+      "sha256": "2cc9ce1757624e00ea63d3cbcd11d642c4defa30af168f8f4f274a25c460425d",
+      "source_dimensions": [
+        1348,
+        926
+      ],
+      "source": "Actual CUA capture of the working app, browser-check page, or public Kiro attribution document."
+    },
+    {
+      "file": "media/captures/05-broken-seal.jpg",
+      "sha256": "dac32ce19f892d50546ca9b8d34e1649dbb89d401bb754f8a3b9a8ca10100eec",
+      "source_dimensions": [
+        1348,
+        926
+      ],
+      "source": "Actual CUA capture of the working app, browser-check page, or public Kiro attribution document."
+    },
+    {
+      "file": "media/captures/04-stale-download-blocked.jpg",
+      "sha256": "56412619e8c555a78ceeed6faf247b98cfeb745935cd24990c5c6a6910f3e54b",
+      "source_dimensions": [
+        1348,
+        926
+      ],
+      "source": "Actual CUA capture of the working app, browser-check page, or public Kiro attribution document."
+    },
+    {
+      "file": "media/captures/06-saved-comparison.jpg",
+      "sha256": "d2f5f029759c915935e437e6fedac1fffd4187e3ff5ef81822691b496b3e2076",
+      "source_dimensions": [
+        1348,
+        926
+      ],
+      "source": "Actual CUA capture of the working app, browser-check page, or public Kiro attribution document."
+    },
+    {
+      "file": "media/captures/09-unsaved-draft-comparison.jpg",
+      "sha256": "f97f54731cd8795143299221f96f43ff76595fad117b69fb33dd591661a1af33",
+      "source_dimensions": [
+        1348,
+        926
+      ],
+      "source": "Actual CUA capture of the working app, browser-check page, or public Kiro attribution document."
+    },
+    {
+      "file": "media/captures/07-approved-download.jpg",
+      "sha256": "c82fcc3b2ca7876ebcf796a7b8e4b31cacf5286f7af3930ad41e1b55decb1d53",
+      "source_dimensions": [
+        1348,
+        926
+      ],
+      "source": "Actual CUA capture of the working app, browser-check page, or public Kiro attribution document."
+    },
+    {
+      "file": "media/captures/08-later-duplicate.jpg",
+      "sha256": "ba1d5de313bf8d1df77718a66e187aaf89d2161ea67e7989145b2a84514f8669",
+      "source_dimensions": [
+        1348,
+        926
+      ],
+      "source": "Actual CUA capture of the working app, browser-check page, or public Kiro attribution document."
+    },
+    {
+      "file": "media/captures/14-kiro-evidence.jpg",
+      "sha256": "37fe786951a513fc47891b726a422f37982ef0656232976f209ba16b325d5e5b",
+      "source_dimensions": [
+        1348,
+        926
+      ],
+      "source": "Actual CUA capture of the working app, browser-check page, or public Kiro attribution document."
+    },
+    {
+      "file": "media/captures/13-browser-checks.jpg",
+      "sha256": "df6e9fff0599ce5f7c9ca9cd0481b439ff7bb64975c375fdd09a49e98d97ceca",
+      "source_dimensions": [
+        1348,
+        926
+      ],
+      "source": "Actual CUA capture of the working app, browser-check page, or public Kiro attribution document."
+    }
+  ],
+  "csv_evidence": {
+    "file": "approved-revision-2026-11-28.csv",
+    "sha256": "c0f651c2909f28d1d12fd51f9ad24f80991ec6f8ff2eca81c797b380df0f9b94",
+    "request_id": "DEMO-002",
+    "approved_revision": "5",
+    "work_instructions": "Tighten the cupboard hinges. Do not replace the door.",
+    "approved_at": "2026-11-28T06:48:02.361Z"
+  },
+  "kiro_attribution": "Actual public KIRO-USAGE document capture distinguishes original Codex work, Kiro CLI implementation, and independent Codex corrections.",
+  "qa": "demo-finalqa.json",
+  "listening_review": "not_performed"
+}

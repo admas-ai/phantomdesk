@@ -1,0 +1,82 @@
+{
+  "suite": "PhantomDesk actual-browser IndexedDB checks",
+  "startedAt": "2026-11-28T07:02:32.840Z",
+  "finishedAt": "2026-11-28T07:02:32.943Z",
+  "passed": 9,
+  "failed": 0,
+  "scope": "Repository storage behavior only; application interface not verified.",
+  "results": [
+    {
+      "name": "Approved state survives close and reopen",
+      "status": "PASS",
+      "durationMs": 14,
+      "database": "phantomdesk-test-c84945e8-c983-42fc-a6ef-4256ac6f93e4",
+      "cleanup": "Database deleted",
+      "error": null
+    },
+    {
+      "name": "A stale edit cannot overwrite a newer save",
+      "status": "PASS",
+      "durationMs": 7,
+      "database": "phantomdesk-test-6e1d8c68-bb3f-43fc-9739-d5aea84af504",
+      "cleanup": "Database deleted",
+      "error": null
+    },
+    {
+      "name": "Thrown save failure rolls back every record",
+      "status": "PASS",
+      "durationMs": 13,
+      "database": "phantomdesk-test-c25267d5-dd2a-45d7-9f0c-e02b4320834b",
+      "cleanup": "Database deleted",
+      "error": null
+    },
+    {
+      "name": "Aborted transaction rolls back every record",
+      "status": "PASS",
+      "durationMs": 9,
+      "database": "phantomdesk-test-63f37922-79fb-4618-8389-937b9bbcdfe5",
+      "cleanup": "Database deleted",
+      "error": null
+    },
+    {
+      "name": "Demo reset preserves the separate user workspace",
+      "status": "PASS",
+      "durationMs": 9,
+      "database": "phantomdesk-test-6b901056-6185-4178-ac50-5fcf127a41e9",
+      "cleanup": "Database deleted",
+      "error": null
+    },
+    {
+      "name": "Demo reset rejects old drafts and export previews",
+      "status": "PASS",
+      "durationMs": 8,
+      "database": "phantomdesk-test-2d9c7341-5fc1-4e67-bc3a-52917df44b56",
+      "cleanup": "Database deleted",
+      "error": null
+    },
+    {
+      "name": "Future schema data remains untouched",
+      "status": "PASS",
+      "durationMs": 5,
+      "database": "phantomdesk-test-8f1af90d-7b75-4b40-847c-af65cd37dfb0",
+      "cleanup": "Database deleted",
+      "error": null
+    },
+    {
+      "name": "Export reads current storage after a stale preview",
+      "status": "PASS",
+      "durationMs": 11,
+      "database": "phantomdesk-test-34949702-632a-4b95-afeb-2f08d91454a0",
+      "cleanup": "Database deleted",
+      "error": null
+    },
+    {
+      "name": "Concurrent saves produce one commit and one conflict",
+      "status": "PASS",
+      "durationMs": 5,
+      "database": "phantomdesk-test-3a81ffa7-20fb-4050-b2d6-8959b6765f81",
+      "cleanup": "Database deleted",
+      "error": null
+    }
+  ]
+}
