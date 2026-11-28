@@ -1000,7 +1000,7 @@ textarea {
   min-width:0;
   background:#f8f2f6
 }
-.comparison-col+ .comparison-col {
+.comparison-current {
   background:#faf6ec;
   border-left:1px solid #e2d6df
 }
@@ -1795,7 +1795,7 @@ textarea {
   .comparison {
     grid-template-columns:1fr
   }
-  .comparison-col+.comparison-col {
+  .comparison-current {
     border-left:0;
     border-top:1px solid #e2d6df
   }
@@ -1946,4 +1946,223 @@ textarea {
   .header-actions .button { min-height:44px; }
   .nav-item { font-size:0; }
   .seal-row { align-items:flex-start; }
+}
+
+/* ── Approval comparison inspector ──────────────────────────────────────── */
+
+/* Selector row: label + <select> for picking a historical approval */
+.approval-selector-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.approval-selector-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .875rem;
+  font-weight: 650;
+  color: #5e525f;
+  margin: 0;
+  white-space: normal;
+}
+.approval-selector {
+  border: 1px solid #ddd4d8;
+  border-radius: 5px;
+  background: #fffefb;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='m1 1 5 5 5-5' fill='none' stroke='%235e525f' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px 8px;
+  padding: 7px 34px 7px 10px;
+  font-size: .875rem;
+  color: var(--ink);
+  min-width: 0;
+  flex: 1 1 220px;
+  max-width: 480px;
+}
+.approval-selector:focus {
+  border-color: #9f82b2;
+  outline: 3px solid #86629e;
+  outline-offset: 2px;
+}
+
+/* Note shown when the editor has an unsaved draft */
+.comparison-draft-note {
+  flex-basis: 100%;
+  font-size: .875rem;
+  color: var(--amber);
+  background: var(--amber-bg);
+  border: 1px solid #e8d4ae;
+  border-radius: 5px;
+  padding: 8px 10px;
+  margin: 4px 0 0;
+  line-height: 1.6;
+}
+
+/* Two-column comparison grid */
+.comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid #e2d6df;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.comparison-col {
+  padding: 11px;
+  min-width: 0;
+  background: #f8f2f6;
+  border-bottom: 1px solid #ede2eb;
+}
+.comparison-current {
+  background: #faf6ec;
+  border-left: 1px solid #e2d6df;
+}
+/* Full-width rows (headings, condition headings, no-conditions notice) */
+.comparison-col-full {
+  grid-column: 1 / -1;
+  background: #f4edf3;
+  border-bottom: 1px solid #ede2eb;
+}
+.comparison h4 {
+  font-size: .875rem;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  margin: 0 0 7px;
+  color: #65526d;
+}
+.comparison p {
+  font-size: 1rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+.comparison .comparison-meta {
+  font-size: .75rem;
+  color: #6d626c;
+  margin-bottom: 8px;
+}
+
+/* Changed / unchanged field highlighting */
+.comparison .comparison-side-label {
+  font-size: .875rem;
+  line-height: 1.5;
+  color: #6d626c;
+  margin-bottom: 5px;
+}
+.comparison .comparison-field-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 10px;
+  flex-wrap: wrap;
+  font-size: .875rem;
+  color: #5e525f;
+  margin-bottom: 5px;
+}
+.comparison .comparison-value {
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.comparison-status {
+  font-size: .875rem;
+  font-weight: 400;
+  color: #65556d;
+  line-height: 1.5;
+}
+.comparison-status-changed {
+  color: var(--amber);
+  font-weight: 650;
+}
+.comparison-changed {
+  background: #fff9e3;
+}
+.comparison-current.comparison-changed {
+  background: #f5f7de;
+}
+
+/* Condition rows within the comparison */
+.comparison-cond {
+  border-bottom: 1px solid #ede2eb;
+  padding: 11px;
+}
+.comparison-cond .condition-title {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  font-weight: 650;
+  font-size: .875rem;
+  overflow-wrap: anywhere;
+}
+.comparison-cond .condition-symbol {
+  font-size: 14px;
+  color: #aa7a37;
+}
+.comparison-cond .rule-id {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: .75rem;
+  letter-spacing: .5px;
+  color: #6f6457;
+  display: block;
+  margin: 4px 0 6px;
+}
+.comparison .comparison-resolution-label {
+  font-size: .875rem;
+  font-weight: 650;
+  color: #5e525f;
+  margin-top: 7px;
+}
+.comparison .comparison-resolution-reason {
+  font-size: 1rem;
+  white-space: pre-wrap;
+  margin-top: 4px;
+}
+.comparison .comparison-resolution-meta {
+  font-size: .75rem;
+  color: #6d626c;
+  margin-top: 4px;
+}
+.comparison .comparison-cond-note {
+  font-size: .875rem;
+  color: var(--amber);
+  line-height: 1.6;
+  border-left: 2px solid #e8c97a;
+  padding-left: 8px;
+  margin-top: 6px;
+}
+.comparison .comparison-absent {
+  color: #6d626c;
+}
+
+/* Error / empty states for comparison */
+.comparison-error,
+.comparison-none {
+  font-size: 1rem;
+  color: var(--muted);
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+.comparison-error {
+  color: var(--danger);
+}
+
+/* Narrow layout: stack columns */
+@media (max-width: 600px) {
+  .comparison {
+    grid-template-columns: 1fr;
+  }
+  .comparison-current {
+    border-left: 0;
+  }
+  .comparison-approved:not(.comparison-head) {
+    border-top: 2px solid #e2d6df;
+  }
 }
