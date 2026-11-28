@@ -224,6 +224,9 @@ def compose(clip: dict, destination: Path, bold: Path, regular: Path) -> dict:
         size -= 1
         heading_font = ImageFont.truetype(str(bold), size)
     draw.text((64, 28), clip["heading"], font=heading_font, fill=COLORS["text"])
+    provenance_font = ImageFont.truetype(str(regular), 18)
+    draw.text((64, 84), "Edited walkthrough · actual app captures · synthetic data",
+              font=provenance_font, fill=COLORS["muted"])
     image = source_image(clip["image"], clip.get("crop"))
     _, _, max_width, max_height = STAGE
     fit = min((max_width - 4) / image.width, (max_height - 4) / image.height)
