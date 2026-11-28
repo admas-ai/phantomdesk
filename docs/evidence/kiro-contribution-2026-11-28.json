@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-28",
+  "kind": "sanitized development provenance, not a submission receipt",
+  "tool": "Kiro CLI v3",
+  "task": "Approval comparison inspector",
+  "source_before": "ac39157",
+  "candidate_commit": "01d31a3",
+  "completed_write_events": [
+    {
+      "operation": "Replace in File",
+      "path": "domain/requests.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "ui/app.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "ui/app.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "ui/app.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "ui/app.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "ui/app.js"
+    },
+    {
+      "operation": "Append to File",
+      "path": "styles.css"
+    },
+    {
+      "operation": "Append to File",
+      "path": "tests/domain.test.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "tests/domain.test.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "tests/domain.test.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "tests/domain.test.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "tests/domain.test.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "tests/domain.test.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "tests/domain.test.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "tests/domain.test.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "tests/domain.test.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "tests/domain.test.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "tests/domain.test.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "docs/KIRO-USAGE.md"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "ui/app.js"
+    },
+    {
+      "operation": "Replace in File",
+      "path": "ui/app.js"
+    }
+  ],
+  "files_changed": [
+    "docs/KIRO-USAGE.md",
+    "domain/requests.js",
+    "styles.css",
+    "tests/domain.test.js",
+    "ui/app.js"
+  ],
+  "original_event_log_sha256": "8c11e721b4378d1fdc8fe09db63319c4be39f9972b8ac696bf3f788e4cd7065b",
+  "run_end": "Parent interrupted after source delivery and a second provider rate-limit cooldown. Exit code 130; no normal final-completion response is claimed.",
+  "kiro_tests": "Attempted shell checks were not executed because the headless session could not obtain permission for the composed shell command. Kiro reported this limitation.",
+  "parent_validation": {
+    "command": "node --test",
+    "observed_at_utc": "2026-11-28T06:35:26Z",
+    "passed": 37,
+    "failed": 0
+  },
+  "followup": "Codex review identified condition-comparison, stable-selection, draft-refresh and mobile-label defects. Those corrections are tracked separately from the original Kiro candidate.",
+  "data": "Wholly synthetic project records. No account credentials or unrelated repositories included in this report."
+}
