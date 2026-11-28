@@ -1,82 +1,124 @@
 {
-  "state": "Executed domain, real IndexedDB and documented UI checks; remaining scope explicit",
+  "state": "November 28 reviewed local candidate: 42 domain tests, 9 actual-browser IndexedDB checks and scoped UI observations passed; partial, unverified and deferred scope remains explicit.",
   "cases": [
     {
       "id": "complete_request",
       "when": "Valid fields",
       "expected": "New unique ID and Needs review; never auto-approved",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. The actual UI created the later matching request with its own ID, retaining both records without auto-approval; see docs/evidence/ui-checks-2026-11-28.json.",
+      "verification_layers": [
+        "domain",
+        "actual_browser_ui"
+      ]
     },
     {
       "id": "missing_unit",
       "when": "Unit empty or whitespace",
       "expected": "Needs information; no approval",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. DEMO-002 with missing unit was blocked; saving unit 3 produced revision 2 and approval produced revision 3. See docs/evidence/ui-checks-2026-11-28.json: missing_information_and_approval.",
+      "verification_layers": [
+        "domain",
+        "actual_browser_ui"
+      ]
     },
     {
       "id": "possible_leak",
       "when": "Sample rule matches description",
       "expected": "Rule ID and priority suggestion shown; human approval required",
-      "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "result": "partially_verified",
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. The sample-leak test verifies rule identity, priority and required review; UI source renders the explanation. A targeted sample-leak UI flow was not rerun in the November 28 inspector journey.",
+      "verification_layers": [
+        "domain",
+        "source_review"
+      ]
     },
     {
       "id": "duplicate",
       "when": "Normalized address/unit/category match",
       "expected": "Flag both; count unchanged",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. The later matching request was flagged and both records remained; see docs/evidence/ui-checks-2026-11-28.json: later_duplicate_invalidates_approval.",
+      "verification_layers": [
+        "domain",
+        "actual_browser_ui"
+      ]
     },
     {
       "id": "unsupported_service",
       "when": "Category absent from catalog",
       "expected": "Out of scope; unsent draft only",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. Unsupported categories are retained and cannot be approved. This does not claim a new November 28 UI interaction for that fixture.",
+      "verification_layers": [
+        "domain"
+      ]
     },
     {
       "id": "manual_priority",
       "when": "Change value with reason",
       "expected": "New version and before/after history",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. Priority changes with reasons create a revision, retain before/after history and expire existing approval.",
+      "verification_layers": [
+        "domain"
+      ]
     },
     {
       "id": "priority_without_reason",
       "when": "Empty reason",
       "expected": "Reject without mutation",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. Empty or nonmeaningful decision reasons are rejected without mutation.",
+      "verification_layers": [
+        "domain"
+      ]
     },
     {
       "id": "refresh",
       "when": "Commit then reload",
       "expected": "Same fields, flags, version and history",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "docs/evidence/browser-checks-2026-11-28.json: Approved state survives close and reopen. The earlier November 25 walkthrough also observed UI reload persistence; that is historical UI evidence.",
+      "verification_layers": [
+        "actual_browser_indexeddb",
+        "prior_actual_browser_ui"
+      ]
     },
     {
       "id": "failed_storage",
       "when": "Transaction aborts",
       "expected": "Store unchanged; draft retained; no Saved claim",
       "result": "partially_verified",
-      "evidence": "Real IndexedDB rollback passed; UI retained a draft on NOT_FOUND rejection. Injected transaction-abort UI path remains unverified."
+      "evidence": "docs/evidence/browser-checks-2026-11-28.json proves thrown-failure and actual-abort rollback. The November 28 UI retained a dirty draft after a stale-revision conflict, and the November 25 UI retained one after NOT_FOUND. Injected storage-failure UI behavior remains unverified.",
+      "verification_layers": [
+        "actual_browser_indexeddb",
+        "partial_actual_browser_ui"
+      ]
     },
     {
       "id": "stale_edit",
       "when": "Expected version older than current",
       "expected": "Reject conflict, no lost update",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. docs/evidence/browser-checks-2026-11-28.json rejects stale writes. The November 28 cross-tab UI rejected the old-base save and retained its draft; see docs/evidence/ui-checks-2026-11-28.json: cross_tab_saved_refresh.",
+      "verification_layers": [
+        "domain",
+        "actual_browser_indexeddb",
+        "actual_browser_ui"
+      ]
     },
     {
       "id": "html_payload",
       "when": "Text contains script or image event",
       "expected": "Display inert text",
       "result": "partially_verified",
-      "evidence": "Domain inert-data test passed and UI uses text nodes; active browser payload check remains unverified."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. Comparison/history/export tests keep HTML and formula-like content literal; UI rendering uses text nodes. An active browser payload check remains unverified.",
+      "verification_layers": [
+        "domain",
+        "source_review"
+      ]
     },
     {
       "id": "bad_import",
@@ -91,112 +133,244 @@
       "when": "Persisted browser data has an unknown newer schema version",
       "expected": "Reject opening the incompatible data without erasing or rewriting it",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. docs/evidence/browser-checks-2026-11-28.json: Future schema data remains untouched.",
+      "verification_layers": [
+        "domain",
+        "actual_browser_indexeddb"
+      ]
     },
     {
       "id": "approved_edit",
       "when": "Change approved field",
       "expected": "New saved revision requires review; old approval snapshot remains immutable; current record cannot be exported until reapproved",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. The real UI save advanced approved 3 to saved 4, broke the seal and retained approval 3; see docs/evidence/ui-checks-2026-11-28.json: saved_edit_breaks_approval.",
+      "verification_layers": [
+        "domain",
+        "actual_browser_ui"
+      ]
     },
     {
       "id": "csv_formula",
       "when": "Cell starts with =,+,-,@ or control chars",
       "expected": "Neutralize formula and escape field",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. Formula/control-prefix handling is verified in the domain; stored instructions remain unchanged.",
+      "verification_layers": [
+        "domain"
+      ]
     },
     {
       "id": "csv_escaping",
       "when": "Commas quotes and newlines",
       "expected": "Valid round-trippable CSV",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. CSV round-trips commas, quotes, Unicode and multiline instructions.",
+      "verification_layers": [
+        "domain"
+      ]
     },
     {
       "id": "export_filter",
       "when": "Mix current approved, incomplete, unresolved and edited formerly approved records",
       "expected": "Export only complete and resolved current saved revisions with matching approval; include exact approved instructions and revision",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. The UI exported only the current eligible approval after reapproval and preview refresh; see docs/evidence/ui-checks-2026-11-28.json: actual_csv_download.",
+      "verification_layers": [
+        "domain",
+        "actual_browser_ui"
+      ]
     },
     {
       "id": "keyboard",
       "when": "Complete workflow without pointer",
       "expected": "Visible focus, reachable controls, managed dialog focus",
       "result": "partially_verified",
-      "evidence": "Keyboard creation, save and approval verified through Tab/Enter in a narrow frame. Broader dialog/export coverage remains unverified."
+      "evidence": "docs/evidence/ui-checks-2026-11-28.json: historical_selector_readonly verifies native keyboard selection and focus retention on November 28. A creation-to-approval Tab/Enter path was observed November 25. Broader dialogs, export and assistive-technology coverage remain unverified.",
+      "verification_layers": [
+        "partial_actual_browser_ui"
+      ]
     },
     {
       "id": "mobile",
       "when": "360px viewport and 200% zoom",
       "expected": "No clipped primary controls or horizontal page overflow",
       "result": "partially_verified",
-      "evidence": "360px embedded viewport verified with no document overflow and fitting controls. Actual 200% browser zoom remains unverified."
+      "evidence": "docs/evidence/ui-checks-2026-11-28.json: narrow_comparison_layout records a 360 CSS-pixel iframe, document client/scroll widths 345/345, comparison bounding/scroll widths 285/283, stacked side labels and a wrapping long UUID. Actual 200% zoom and physical-device testing remain unverified.",
+      "verification_layers": [
+        "partial_actual_browser_ui"
+      ]
     },
     {
       "id": "reduced_motion",
       "when": "OS preference enabled",
       "expected": "No decorative animation; no loss of state information",
       "result": "not_run",
-      "evidence": "CSS support is present; preference-specific browser verification remains open."
+      "evidence": "CSS preference support is present. Preference-specific browser verification has not been run.",
+      "verification_layers": [
+        "source_review"
+      ]
     },
     {
       "id": "stale_export_preview",
       "when": "Preview an approved revision, then edit it before downloading",
       "expected": "Block the stale selection; identify the changed request and require an updated preview; never export its old approval as current",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. docs/evidence/browser-checks-2026-11-28.json verifies persisted-state checks. A real stale download was blocked in the November 28 UI; see docs/evidence/ui-checks-2026-11-28.json: actual_stale_download.",
+      "verification_layers": [
+        "domain",
+        "actual_browser_indexeddb",
+        "actual_browser_ui"
+      ]
     },
     {
       "id": "duplicate_after_approval",
       "when": "Approve A, then create or edit B to match A address, unit and category",
       "expected": "Atomically add unresolved duplicate conditions, advance affected revisions, invalidate approvals and append history; preserve both records",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. Adding REQ-57263399-ce4c-4008-8cda-47e7ebb25825 advanced DEMO-002 to 6 and invalidated approval while retaining both records; see docs/evidence/ui-checks-2026-11-28.json.",
+      "verification_layers": [
+        "domain",
+        "actual_browser_ui"
+      ]
     },
     {
       "id": "duplicate_resolution_scope",
       "when": "Resolve A/C with a reason, approve A, then introduce new matching B",
       "expected": "The A/C reason does not resolve A/B; A requires review and cannot be exported",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. A new third matching request does not inherit an earlier pair reason. The earlier November 25 UI regression observed this three-request case; the November 28 UI observed a new counterpart and its separate recorded resolution.",
+      "verification_layers": [
+        "domain",
+        "prior_actual_browser_ui"
+      ]
     },
     {
       "id": "cross_record_transaction_failure",
       "when": "Abort a transaction that would introduce a duplicate on an approved request",
       "expected": "All affected records, revisions, approvals and histories remain at their prior committed values; keep the attempted draft unsaved",
-      "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "result": "partially_verified",
+      "evidence": "docs/evidence/browser-checks-2026-11-28.json verifies all-record rollback for thrown and aborted transactions. Retaining the attempted draft during an injected UI storage failure remains unverified; the observed UI conflict path is different.",
+      "verification_layers": [
+        "actual_browser_indexeddb",
+        "partial_actual_browser_ui"
+      ]
     },
     {
       "id": "storage_retry_history",
       "when": "Retry the same user intent after a failed transaction",
       "expected": "Commit each intended state transition and history event once; no duplicated records or events",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. docs/evidence/browser-checks-2026-11-28.json: thrown-failure rollback and retry verify one committed transition without duplicate history.",
+      "verification_layers": [
+        "domain",
+        "actual_browser_indexeddb"
+      ]
     },
     {
       "id": "approval_requires_saved",
       "when": "Attempt to approve or export while relevant visible fields are unsaved",
       "expected": "Require a successful save and review of that saved revision; do not imply unsaved values were approved or exported",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "docs/evidence/ui-checks-2026-11-28.json: unsaved_draft_is_distinct and cross_tab_status_repeat_after_fix verify disabled approval/export controls, the explicit draft note and current saved status.",
+      "verification_layers": [
+        "actual_browser_ui"
+      ]
     },
     {
       "id": "demo_workspace_isolation",
       "when": "Create a record in the empty workspace, then reset the synthetic demonstration",
       "expected": "Only demo records reset; user workspace data and approval history remain unchanged",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "docs/evidence/browser-checks-2026-11-28.json: Demo reset preserves the separate user workspace.",
+      "verification_layers": [
+        "actual_browser_indexeddb"
+      ]
     },
     {
       "id": "approved_csv_instructions",
       "when": "Approve a revision with specific instructions, download CSV and reload",
       "expected": "Downloaded instructions, request ID, approved revision and approval time correspond to the saved approval; reloaded history retains the snapshot",
       "result": "passed",
-      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. Approved storage survives close/reopen in docs/evidence/browser-checks-2026-11-28.json. The real November 28 CSV is docs/evidence/approved-revision-2026-11-28.csv; its single row matches approved DEMO-002 revision 5 at 2026-11-28T06:48:02.361Z.",
+      "verification_layers": [
+        "domain",
+        "actual_browser_indexeddb",
+        "actual_browser_ui"
+      ]
+    },
+    {
+      "id": "historical_approval_selector",
+      "when": "A request has a current approval and one or more preserved approvals",
+      "expected": "List every approval once with stable identity; preserve the selected approval across saved updates",
+      "result": "passed",
+      "verification_layers": [
+        "domain",
+        "actual_browser_ui"
+      ],
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. docs/evidence/ui-checks-2026-11-28.json: historical_selector_readonly and cross_tab_status_repeat_after_fix."
+    },
+    {
+      "id": "comparison_readonly",
+      "when": "Select another approval or inspect returned comparison data",
+      "expected": "Do not mutate saved records, history, current approval or export eligibility",
+      "result": "passed",
+      "verification_layers": [
+        "domain",
+        "actual_browser_ui"
+      ],
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. Frozen-input/returned-data tests passed. Native selector changes did not mutate history or approval state in docs/evidence/ui-checks-2026-11-28.json."
+    },
+    {
+      "id": "comparison_saved_vs_draft",
+      "when": "Visible editor fields are unsaved",
+      "expected": "Show an immediate draft note and compare the selected approval with the current saved record",
+      "result": "passed",
+      "verification_layers": [
+        "actual_browser_ui"
+      ],
+      "evidence": "docs/evidence/ui-checks-2026-11-28.json: unsaved_draft_is_distinct, cross_tab_saved_refresh and discard_restores_current."
+    },
+    {
+      "id": "comparison_condition_sides",
+      "when": "A condition is added, removed or changed relative to a selected approval",
+      "expected": "Keep each side exact, show absence explicitly, and retain its recorded resolution details",
+      "result": "passed",
+      "verification_layers": [
+        "domain",
+        "actual_browser_ui"
+      ],
+      "evidence": "tests/domain.test.js; 42 tests passed on November 28. Added/removed/modified condition cases passed. The UI observed an absent earlier side and the current resolved duplicate with its actual reason in docs/evidence/ui-checks-2026-11-28.json: condition_absence_and_resolution; removal and both-resolved modification are domain coverage, not additional claimed UI runs."
+    },
+    {
+      "id": "cross_tab_comparison_refresh",
+      "when": "Another tab saves while the selected request has an unsaved draft",
+      "expected": "Refresh comparison from current saved state, retain selected approval, draft base and focus, and reject stale saves",
+      "result": "passed",
+      "verification_layers": [
+        "actual_browser_ui"
+      ],
+      "evidence": "docs/evidence/ui-checks-2026-11-28.json: cross_tab_saved_refresh verified saved 9 with the old-base draft; the repeated final check retained approval-3 selection at saved 11."
+    },
+    {
+      "id": "cross_tab_saved_status",
+      "when": "Another tab invalidates approval while the local draft remains unsaved",
+      "expected": "Clearly distinguish the draft base from latest saved revision and refresh saved-status text and seal without replacing draft fields",
+      "result": "passed",
+      "verification_layers": [
+        "actual_browser_ui"
+      ],
+      "evidence": "docs/evidence/ui-checks-2026-11-28.json: cross_tab_status_repeat_after_fix verified draft base 10 / saved 11, Needs review, Save or discard draft and the broken revision-11 seal."
+    },
+    {
+      "id": "comparison_mobile_labels",
+      "when": "The comparison is displayed in a 360 CSS-pixel embedded viewport",
+      "expected": "Identify approved/current revision on each stacked side, show literal change status, wrap long IDs and avoid horizontal document overflow",
+      "result": "passed",
+      "verification_layers": [
+        "actual_browser_ui"
+      ],
+      "evidence": "docs/evidence/ui-checks-2026-11-28.json: narrow_comparison_layout and layout_measurements. This scoped pass does not include 200% zoom or a physical-device check."
     }
   ],
   "preparation_date": "2026-11-25",
@@ -204,5 +378,15 @@
   "deferred_features": [
     "General JSON import is outside the first working slice; do not expose an import control."
   ],
-  "verification_date": "2026-11-25"
+  "verification_date": "2026-11-28",
+  "requirements_source_note": "Historical requirements baseline only; requirements_source_commit is not a claim about the current public repository revision.",
+  "verification_summary": {
+    "domain_tests_passed": 42,
+    "domain_tests_failed": 0,
+    "actual_browser_indexeddb_checks_passed": 9,
+    "actual_browser_indexeddb_checks_failed": 0,
+    "storage_report": "docs/evidence/browser-checks-2026-11-28.json",
+    "ui_observation_report": "docs/evidence/ui-checks-2026-11-28.json",
+    "scope_note": "Verification layers are stated per case. A passing domain or repository check does not imply an unobserved UI path. Unverified product checks are not automatically mandatory contest requirements."
+  }
 }
