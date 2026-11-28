@@ -1,0 +1,21 @@
+When maintenance instructions change, what exactly does an approval still cover?
+
+PhantomDesk is a review desk for a maintenance coordinator. Its haunted records-office theme makes one rule visible: approval belongs to an exact saved revision.
+
+This synthetic request is missing a unit, so approval is blocked. I add unit three, save, and approve the saved instructions. The intact seal now identifies the approved revision.
+
+Here is the request in the export preview. I leave the preview open, change the instructions, and save.
+
+The seal breaks. The old approval stays in history. Trying to download the earlier preview is blocked, because the stored request no longer matches what was approved.
+
+The approval inspector lets me select a preserved approval and compare every field with the current saved record. Changed and unchanged labels explain the difference. An unsaved draft is clearly marked and stays separate from the saved comparison.
+
+After reviewing and approving the new revision, I refresh the preview and download a CSV. Its instructions, revision, and approval time match the saved approval.
+
+A later matching request creates another review condition. Both requests stay in the ledger, and the earlier approval expires. Resolving one pair does not automatically resolve a third request.
+
+The app uses JavaScript and the browser's database, with no runtime AI service. Codex authored the original prototype. Kiro CLI implemented the approval comparison helper, historical selector, styles, and additional tests from the project brief. Independent Codex review corrected comparison details, selection stability, and draft behavior. Automated checks and browser verification cover the demonstrated workflow.
+
+This prototype stores records on this device. Reviewer labels are not authenticated identities.
+
+Try changing an approved request. The old approval stays visible. The changed instructions have to earn a new seal.
