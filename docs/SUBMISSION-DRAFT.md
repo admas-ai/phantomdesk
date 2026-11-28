@@ -1,26 +1,26 @@
-# PhantomDesk — submission draft
+# PhantomDesk — submitted project record
 
-**Status: prepared but unsubmitted.** The revised application and 1:54 demonstration are now public. Runtime source and supporting evidence are verified. Genuine Kiro source work has been completed and independently reviewed. Final release-status documentation publication and Devpost CAPTCHA verification and entry completion remain pending; sign-in succeeded; no draft or submitted receipt was verified in this session.
+**Status: submitted to Kiroween 2026.** Devpost confirmed [the public PhantomDesk entry](https://devpost.com/software/phantomdesk) at the `2026-11-28T07:48:30Z` observation checkpoint, submission ID **1323609**. The revised application, public source and 1:54 demonstration are linked in the submitted entry. Genuine Kiro source work and independent review are documented below. This file retains its original filename as a project record; the [submission evidence](evidence/devpost-submission-2026-11-28.json) records the exact confirmed state.
 
 ## Entry fields
 
-| Field | Draft value |
+| Field | Recorded value |
 | --- | --- |
 | Project name | PhantomDesk |
 | Tagline | Approval belongs to a revision. Change the instructions, break the seal. |
-| Intended category | Costume Contest |
+| Submitted category | Costume Contest |
 | Working demo URL | [PhantomDesk](https://phantomdesk.neighborlyhydrangea16.chatgpt.site/) — revised version 3 deployed and public-page checks passed November 28 |
 | Source URL/revision | [admas-ai/phantomdesk](https://github.com/admas-ai/phantomdesk), verified runtime/evidence checkpoint [`7801ab90`](https://github.com/admas-ai/phantomdesk/commit/7801ab90ab5edeb060f226e4e7fa148b1b49fa25); final release-status documentation prepared afterward |
 | Public YouTube demonstration | [Public 1:54 demonstration](https://www.youtube.com/watch?v=raMvzOlu98o) — publication, title/duration and timed English subtitles verified; cloud watch playback remained buffering |
 | Built with | HTML, CSS, JavaScript modules, IndexedDB; Codex and Kiro CLI during development |
 | Kiro contribution | Comparison helper, historical approval selector, comparison renderer/styles and eight additional domain tests; observed November 28 |
-| Submitted receipt | **PENDING — no verified receipt** |
+| Submission confirmation | **Verified** — [public project](https://devpost.com/software/phantomdesk), ID `1323609`, observed `2026-11-28T07:48:30Z` |
 
-## Prepared optional bonus fields
+## Submitted optional bonus fields
 
-The entrant is preparing **Best Startup Project** consideration as a solo individual. The [official rules](https://kiroween.devpost.com/rules), rechecked November 28, list a $10,000 startup bonus and require founder LinkedIn and startup website information. These are prepared field values, not a submitted selection or an eligibility determination.
+The entry was submitted as an **Individual**, with **Best Startup Project** consideration selected and saved (the form uses **Startup Project**). The [official rules](https://kiroween.devpost.com/rules), rechecked November 28, list a $10,000 startup bonus and require founder LinkedIn and startup website information. The saved selection does not imply that the organizers have confirmed eligibility or an award.
 
-| Field | Prepared value |
+| Field | Recorded value |
 | --- | --- |
 | Entrant type | Solo individual |
 | Founder | Surafiel Temesgien |
@@ -29,7 +29,7 @@ The entrant is preparing **Best Startup Project** consideration as a solo indivi
 | Founder LinkedIn | [Surafiel Temesgien](https://www.linkedin.com/in/surafiel-temesgien-573363263) |
 | Startup website | [https://www.admas.dev](https://www.admas.dev) |
 | Optional category | Best Startup Project |
-| Status | Prepared; final form entry and organizer eligibility review pending |
+| Status | Selected and saved in the submitted entry; organizer eligibility and award decisions are separate |
 
 ## Inspiration
 
@@ -93,16 +93,16 @@ An approval becomes easier to assess when its exact revision and recorded review
 
 ## What is next
 
-Publish the final release-status documentation, complete Devpost CAPTCHA verification and the prepared entry fields, and retain a submitted receipt. Devpost sign-in has succeeded. The revised public application and YouTube video are published. Further perceptual playback/listening review remains unverified because the cloud watch player buffered; local decode, frame and audio signal checks are documented separately. After the prototype is evaluated, coordinator feedback could inform whether shared access, stronger identity controls or managed backups are useful additions.
+The entry is submitted, and the revised public application and YouTube video are published. Devpost states that the project remains editable until December 04, 2026 at 05:00pm EST. Further perceptual playback/listening review remains unverified because the cloud watch player buffered; local decode, frame and audio signal checks are documented separately. Future coordinator feedback could inform whether shared access, stronger identity controls or managed backups are useful additions.
 
-## Final completion record — pending
+## Confirmed completion record
 
 - Genuine Kiro source contribution and evidence: **completed and independently reviewed**; process interruption and check attribution are documented.
 - Local application: **scoped browser journey passed on the final code**.
 - Public demo: **revised version 3 deployed and checked** on November 28, including missing-unit blocking, save/approval and the new approval selector.
-- Public source: **runtime and supporting evidence published and verified** at `7801ab90ab5edeb060f226e4e7fa148b1b49fa25`; final release-status documentation publication remains pending.
+- Public source: **runtime and supporting evidence published and verified** at `7801ab90ab5edeb060f226e4e7fa148b1b49fa25`; this submission-confirmation update was prepared after that source checkpoint.
 - Narration: **288-word script and 112.003-second voice track prepared**.
 - Final MP4: **completed, technically checked and published at 114 seconds** on [YouTube](https://www.youtube.com/watch?v=raMvzOlu98o), with public visibility selected and 43 timed English subtitle cues published. Cloud perceptual playback, signed-out playback and listening review remain unverified.
-- Devpost sign-in: **succeeded**. CAPTCHA verification, final entry completion and submitted receipt: **pending**; no draft or receipt verified in this session.
+- Devpost: **submitted and confirmed** at [the public project](https://devpost.com/software/phantomdesk), ID `1323609`, observed `2026-11-28T07:48:30Z`. Costume Contest and Best Startup Project were saved for an Individual entry. The user confirmed the required declarations and authorized agreement and submission.
 
-The [release record](evidence/release-2026-11-28.json) and [video publication details](VIDEO-PUBLISHING.md) record the completed public steps and verification limits. Update the remaining form fields from observed submission results. Consult the [official Kiroween rules](https://kiroween.devpost.com/rules) for applicable entry requirements; this draft and its technical checks do not themselves establish eligibility or submission.
+The [submission confirmation](evidence/devpost-submission-2026-11-28.json), [release record](evidence/release-2026-11-28.json) and [video publication details](VIDEO-PUBLISHING.md) record completed steps and verification limits. The observed submitted status does not imply an eligibility or award decision under the [official Kiroween rules](https://kiroween.devpost.com/rules).

@@ -1,6 +1,6 @@
 # PhantomDesk demonstration publishing details
 
-Published November 28, 2026. YouTube Studio confirmed the public upload and timed English subtitles. This record distinguishes publication from playback verification and is not a contest-submission receipt.
+Published November 28, 2026. YouTube Studio confirmed the public upload and timed English subtitles. The video is linked in the [confirmed Kiroween submission](https://devpost.com/software/phantomdesk). This record distinguishes publication from playback verification; [separate evidence](evidence/devpost-submission-2026-11-28.json) records the Devpost confirmation.
 
 ## Title
 
@@ -42,7 +42,7 @@ Prepared as part of the Kiroween 2026 hackathon.
 | Subtitles | Timed 43-cue [English SRT](evidence/demo-narration.srt) uploaded; Studio returned **English subtitles published** |
 | Platform checks | Copyright: **No issues found**; community guidelines: **No issues found** |
 | Watch-page check | Correct title and 1:54 duration visible at the public URL |
-| Devpost | Sign-in succeeded; CAPTCHA verification and final entry completion pending; no submitted receipt verified |
+| Devpost | **Submitted to Kiroween 2026** — [public project](https://devpost.com/software/phantomdesk), ID `1323609`, confirmation observed `2026-11-28T07:48:30Z` |
 
 Uploaded MP4 SHA-256: `bf6a6c64494bf6fcda2d78f8452eb534c7a478406183678d45e581f33c851698`.
 

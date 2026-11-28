@@ -1,6 +1,6 @@
 # PhantomDesk build and release status
 
-Checkpoint: **November 28, 2026**. This record distinguishes the verified application, completed public deployment and video publication, and remaining submission work. It is not a submission receipt.
+Checkpoint: **November 28, 2026, 07:48:30 UTC**. The application and video are public, and Devpost confirmed the project submission. This record distinguishes observed completion from verification limits and does not imply an eligibility or award decision.
 
 ## Current result
 
@@ -18,7 +18,7 @@ The local application has completed the approval-to-export workflow and the sele
 | Public demo | [PhantomDesk](https://phantomdesk.neighborlyhydrangea16.chatgpt.site/) version 3 deployed successfully on November 28; the actual public page and new approval selector were checked |
 | Public source | Runtime and supporting evidence published and verified at [commit `7801ab90`](https://github.com/admas-ai/phantomdesk/commit/7801ab90ab5edeb060f226e4e7fa148b1b49fa25); final release-status documentation was prepared after this checkpoint |
 | Demonstration media | [Public YouTube video](https://www.youtube.com/watch?v=raMvzOlu98o), 1:54; Studio confirmed publication and English subtitles. Local technical/visual checks passed. Cloud playback remained buffering; perceptual playback and listening review are unverified |
-| Devpost | No verified submitted receipt; sign-in succeeded; a CAPTCHA appeared before draft creation and remains unresolved |
+| Devpost | **Submitted to Kiroween 2026**; [public project](https://devpost.com/software/phantomdesk), submission ID `1323609`; success toast and submitted sidebar observed at `07:48:30Z` |
 
 ## Evidence
 
@@ -29,10 +29,11 @@ The local application has completed the approval-to-export workflow and the sele
 | [Actual downloaded CSV](evidence/approved-revision-2026-11-28.csv) | Synthetic `DEMO-002` export for approved revision 5, with exact instructions and approval timestamp |
 | [Approval-comparison screenshot](evidence/approval-comparison-2026-11-28.jpg) | Approved revision 3 compared with saved revision 4, including literal change labels |
 | [Kiro contribution record](evidence/kiro-contribution-2026-11-28.json) | Sanitized observed write events, preserved candidate and attribution boundaries |
-| [Release record](evidence/release-2026-11-28.json) | Deployment identifiers, public-source checkpoint, exact uploaded media hash and YouTube verification limits |
+| [Release record](evidence/release-2026-11-28.json) | Deployment identifiers, public-source checkpoint, exact uploaded media hash, YouTube limits and completed Devpost status |
+| [Devpost submission confirmation](evidence/devpost-submission-2026-11-28.json) | Exact success UI proof, observed time, public URL, submission ID and saved categories |
 | [November 25 IndexedDB report](evidence/browser-checks-2026-11-25.json) | The earlier baseline run, retained as historical evidence |
 
-These artifacts contain wholly synthetic data. The UI report is an observation record, not a separately executed automated UI suite. No customer adoption, revenue, time savings or production reliability results are claimed.
+The application fixtures and workflow evidence use synthetic request data. The UI report is an observation record, not a separately executed automated UI suite. The submission record contains the actual public project identifiers and observed confirmation. No customer adoption, revenue, time savings or production reliability results are claimed.
 
 ## November 28 interface journey
 
@@ -83,7 +84,7 @@ Kiro's original candidate added eight domain tests to the 29-test Codex baseline
 
 The observed Kiro run resumed after one provider cooldown, delivered source changes and a draft usage record, then entered a second cooldown during final inspection. The parent interrupted it with exit code `130`. The source contribution is completed and preserved; a normal final Kiro completion response, Kiro-operated browser checks, or Kiro deployment is not claimed.
 
-## Publication and remaining completion work
+## Publication and submission confirmation
 
 The revised application is deployed at [the public app URL](https://phantomdesk.neighborlyhydrangea16.chatgpt.site/). Version 3 deployment succeeded at `2026-11-28T07:17:00.225188Z`. The actual public page loaded all five synthetic fixtures. At the `07:17:20.866Z` verification checkpoint, `DEMO-002` with a missing unit could not be approved; entering unit `3` and saving produced revision `2`, approval produced `3`, and the new selector listed approval `3` once with every comparison field visibly Unchanged. This is the checked runtime, not the earlier November 25 release.
 
@@ -93,7 +94,13 @@ The exact 114-second MP4 was uploaded to Admas Academy (`@AdmasAcademy1`) and Yo
 
 The cloud watch player stayed buffering at `currentTime = 0` and `readyState = 0`, including after one reload. Perceptual playback, signed-out playback and listening review are therefore unverified. Local verification did decode the complete audio/video, inspect 34 representative encoded frames, and check audio RMS/peak and source/output correlation. See [DEMO-PLAN.md](DEMO-PLAN.md) and [VIDEO-PUBLISHING.md](VIDEO-PUBLISHING.md) for those separate evidence layers.
 
-Remaining completion work is to publish the final release-status documentation, complete Devpost CAPTCHA verification and required entry fields, and retain an actual submission receipt. No Devpost draft or receipt was verified in this session. The prepared startup-bonus fields remain subject to entry completion and organizer eligibility review.
+Devpost submission completed after the user confirmed the required declarations and authorized agreement and submission. The form saved an **Individual** entry with **Costume Contest** and **Best Startup Project** (shown as **Startup Project** in the bonus selection). The application, repository and video links, project story, four screenshots and thumbnail were saved and previewed before submission.
+
+At `2026-11-28T07:48:30Z`, Devpost had navigated to [the public PhantomDesk project](https://devpost.com/software/phantomdesk), displayed **SUBMITTED TO — Kiroween 2026** and **Edit hackathon submission**, and showed this exact confirmation:
+
+> Project submitted! Continue to edit your project until the hackathon deadline: December 04, 2026 at 05:00pm EST.
+
+Submission ID: **1323609**. The [confirmation evidence](evidence/devpost-submission-2026-11-28.json) preserves the observed state. Personal eligibility answers are not included in the public record. Submission confirmation is not an organizer eligibility or award determination.
 
 Broader product verification remains open: actual 200% browser zoom, exhaustive accessibility and keyboard/dialog coverage, reduced-motion preference verification, active UI payload checks, and a retained draft under an injected storage failure. The [acceptance matrix](../acceptance-checks.json) records those limits. They are not presented as universally mandatory contest gates; applicable entry requirements must be checked separately against the [official rules](https://kiroween.devpost.com/rules).
 
