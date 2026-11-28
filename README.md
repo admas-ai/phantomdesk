@@ -8,7 +8,7 @@ The published prototype implements the approval workflow and a selectable approv
 
 **Development attribution:** Codex authored the original working prototype. Kiro CLI made a substantive November 28 contribution: the comparison helper, historical selector, comparison renderer and styles, and eight additional domain tests. Independent Codex review then corrected condition comparisons, selection stability, draft refresh and status labels. [The Kiro development record](docs/KIRO-USAGE.md) preserves that distinction and the observed execution evidence.
 
-The revised [public app](https://phantomdesk.neighborlyhydrangea16.chatgpt.site/) is live as version 3, deployed on November 28 and checked in the actual public page. Runtime source and supporting evidence are published and verified at [commit `7801ab90`](https://github.com/admas-ai/phantomdesk/commit/7801ab90ab5edeb060f226e4e7fa148b1b49fa25). The [1:54 narrated demonstration](https://www.youtube.com/watch?v=raMvzOlu98o) is published publicly on YouTube. The release-status documentation was updated after that source checkpoint; Devpost sign-in succeeded; CAPTCHA verification and submission remain pending. See [the release record](docs/evidence/release-2026-11-28.json) for the exact publication checks and their limits.
+The revised [public app](https://phantomdesk.neighborlyhydrangea16.chatgpt.site/) is live as version 3, deployed on November 28 and checked in the actual public page. Runtime source and supporting evidence are published and verified at [commit `7801ab90`](https://github.com/admas-ai/phantomdesk/commit/7801ab90ab5edeb060f226e4e7fa148b1b49fa25). The [1:54 narrated demonstration](https://www.youtube.com/watch?v=raMvzOlu98o) is published publicly on YouTube. The release-status documentation was updated after that source checkpoint. **[PhantomDesk is submitted to Kiroween 2026](https://devpost.com/software/phantomdesk)** as an individual entry in Costume Contest, with Best Startup Project consideration selected. Devpost submission confirmation was observed at `2026-11-28T07:48:30Z` (submission ID `1323609`). See [the release record](docs/evidence/release-2026-11-28.json) for the exact publication checks and their limits.
 
 ## Run locally
 
@@ -72,7 +72,8 @@ The observed 360px embedded layout and native keyboard selector checks do not es
 | [November 28 interface report](docs/evidence/ui-checks-2026-11-28.json) | Actual browser observations and their limits |
 | [Downloaded CSV](docs/evidence/approved-revision-2026-11-28.csv) | Inspected synthetic export for approved revision 5 |
 | [Release record](docs/evidence/release-2026-11-28.json) | Verified deployment, source and YouTube publication checkpoints |
-| [SUBMISSION-DRAFT.md](docs/SUBMISSION-DRAFT.md) | Unsubmitted project description and pending fields |
+| [Submitted project record](docs/SUBMISSION-DRAFT.md) | Project description, saved categories and confirmed submission |
+| [Devpost confirmation evidence](docs/evidence/devpost-submission-2026-11-28.json) | Exact success message, public URL and observed submission status |
 
 The root `.kiro/` directory contains the preserved requirements, specification, steering and task inputs. Their presence alone is not evidence of Kiro execution; the [sanitized contribution record](docs/evidence/kiro-contribution-2026-11-28.json) records the actual run. The [acceptance matrix](acceptance-checks.json) distinguishes passed, partial, unverified and deferred cases.
 
@@ -82,9 +83,9 @@ The root `.kiro/` directory contains the preserved requirements, specification, 
 - **Public source:** [admas-ai/phantomdesk](https://github.com/admas-ai/phantomdesk) — runtime and supporting evidence verified at [`7801ab90`](https://github.com/admas-ai/phantomdesk/commit/7801ab90ab5edeb060f226e4e7fa148b1b49fa25); final release-status documentation was prepared after that checkpoint.
 - **Genuine Kiro contribution:** completed source contribution, preserved and independently reviewed. Kiro's process was interrupted after a second provider cooldown; no normal final-completion response or Kiro-executed tests are claimed.
 - **Demonstration:** [watch the public 1:54 walkthrough](https://www.youtube.com/watch?v=raMvzOlu98o) on Admas Academy. YouTube Studio confirmed publication and English subtitles. The [local media checks](docs/DEMO-PLAN.md) passed full decoding, 34 sampled-frame reviews and audio continuity checks. The cloud watch player remained buffering, so perceptual playback, signed-out playback and listening review are not claimed.
-- **Devpost:** sign-in succeeded; a CAPTCHA appeared before draft creation. Verification and final entry completion remain pending; no submitted receipt is verified.
+- **Devpost:** **submitted** at [devpost.com/software/phantomdesk](https://devpost.com/software/phantomdesk), submission ID `1323609`. The success message and **SUBMITTED TO — Kiroween 2026** sidebar were observed at `2026-11-28T07:48:30Z`. Costume Contest and Best Startup Project were selected and saved.
 
-Publish the final release-status documentation, then complete the entry using the [official Kiroween rules](https://kiroween.devpost.com/rules). The technical evidence here does not itself establish contest eligibility or a submitted entry.
+The user confirmed the required declarations and authorized agreement and submission. [The recorded Devpost confirmation](docs/evidence/devpost-submission-2026-11-28.json) establishes the observed submitted status; eligibility and awards remain subject to the organizers and [official rules](https://kiroween.devpost.com/rules).
 
 ## License
 
