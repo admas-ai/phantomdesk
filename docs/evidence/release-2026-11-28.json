@@ -1,0 +1,106 @@
+{
+  "report": "PhantomDesk verified public release checkpoint",
+  "date": "2026-11-28",
+  "scope": "Observed deployment, public-source comparison and YouTube publication; not a Devpost submission receipt or an eligibility determination.",
+  "application": {
+    "url": "https://phantomdesk.neighborlyhydrangea16.chatgpt.site/",
+    "deployment_status": "succeeded",
+    "version_number": 3,
+    "deployed_at": "2026-11-28T07:17:00.225188Z",
+    "project_id": "appgprj_6b0760ca7d1c81919b1d6ad9d3b868e0",
+    "version_id": "appgprj_6b0760ca7d1c81919b1d6ad9d3b868e0~appgver_5c0e9a2b57688191a211175794bb1f66",
+    "deployment_id": "appgdep_6b0a7fe81f40819187c6fd191213a22b",
+    "site_source_sha": "251786752742fd1c57df4c00a81874339d814f0a",
+    "source_archive_local_commit": "1bea45bddb56be32be7e5748dba446203ffabb27",
+    "public_ui_verified_at": "2026-11-28T07:17:20.866Z",
+    "public_ui_observations": [
+      "Five synthetic fixtures loaded.",
+      "DEMO-002 missing unit disabled approval.",
+      "Entering unit 3 and saving produced revision 2.",
+      "Approval produced revision 3.",
+      "The new approval selector listed revision 3 once.",
+      "Every comparison field visibly showed Unchanged."
+    ],
+    "runtime_matches_checked_application": true
+  },
+  "public_source": {
+    "repository_url": "https://github.com/admas-ai/phantomdesk",
+    "verified_runtime_evidence_commit": "7801ab90ab5edeb060f226e4e7fa148b1b49fa25",
+    "commit_url": "https://github.com/admas-ai/phantomdesk/commit/7801ab90ab5edeb060f226e4e7fa148b1b49fa25",
+    "comparison": "Compared runtime and supporting-evidence file hashes matched except the known fixture-JSON trailing-newline difference; parsed fixture contents matched.",
+    "fixture_difference": "Trailing newline only; semantically equal JSON.",
+    "checkpoint_limit": "The four final release-status document updates and this release record were prepared after this verified commit. Their final public commit is not asserted here."
+  },
+  "video": {
+    "url": "https://www.youtube.com/watch?v=raMvzOlu98o",
+    "youtube_id": "raMvzOlu98o",
+    "title": "PhantomDesk \u2014 Change the Instructions, Break the Seal | Kiroween 2026",
+    "channel": "Admas Academy",
+    "channel_handle": "@AdmasAcademy1",
+    "published_date": "2026-11-28",
+    "studio_publication_result": "Video published",
+    "visibility_selected": "Public",
+    "uploaded_mp4_sha256": "bf6a6c64494bf6fcda2d78f8452eb534c7a478406183678d45e581f33c851698",
+    "duration_seconds": 114,
+    "watch_page_duration": "1:54",
+    "language": "English",
+    "category": "Science & Technology",
+    "made_for_kids": false,
+    "audience_context": "Professional software demonstration",
+    "ai_use_disclosure_selected": "Yes",
+    "narration_disclosure": "AI-generated voice disclosed",
+    "paid_promotion": false,
+    "subtitles": {
+      "language": "English",
+      "format": "SRT",
+      "cue_count": 43,
+      "uploaded_with_timing": true,
+      "repository_file": "demo-narration.srt",
+      "studio_result": "English subtitles published"
+    },
+    "platform_checks": {
+      "copyright": "No issues found",
+      "community_guidelines": "No issues found",
+      "interpretation": "Observed platform checks, not a broader rights or eligibility determination."
+    },
+    "watch_page_title_and_duration_verified": true,
+    "cloud_playback": {
+      "result": "buffering",
+      "currentTime": 0,
+      "readyState": 0,
+      "reload_attempts": 1,
+      "perceptual_playback_verified": false,
+      "signed_out_playback_verified": false,
+      "listening_review_performed": false
+    },
+    "local_verification": {
+      "full_audio_and_video_decode": "passed",
+      "representative_encoded_frames_inspected": 34,
+      "audio_peak_dbfs": -0.227,
+      "audio_rms_dbfs": -17.593,
+      "clipped_samples": 0,
+      "checked_source_output_segment_correlations": ">0.99997 at zero offset",
+      "technical_report": "demo-finalqa.json",
+      "edit_and_scope_document": "../DEMO-PLAN.md",
+      "listening_review_performed": false
+    }
+  },
+  "devpost": {
+    "authenticated_in_current_session": true,
+    "draft_verified_this_session": false,
+    "submission_receipt_verified": false,
+    "status": "Sign-in succeeded for the existing account. A CAPTCHA appeared before draft creation; no challenge response, draft or submission receipt is claimed."
+  },
+  "pending_completion": [
+    "Publish the final release-status documentation and release record.",
+    "Complete Devpost CAPTCHA verification and required entry fields.",
+    "Verify actual submitted status and retain a receipt."
+  ],
+  "remaining_verification_limits": [
+    "Cloud perceptual watch playback was not verified because the player buffered.",
+    "Signed-out YouTube playback was not verified.",
+    "Listening review was not performed.",
+    "Broader application verification limits remain in BUILD-STATUS.md and the acceptance matrix."
+  ],
+  "earlier_checkpoint_note": "ui-checks-2026-11-28.json retains the earlier publication checkpoint from the local UI run. This release record supersedes its source, deployment and video publication status."
+}
