@@ -1,0 +1,14 @@
+{
+  "name": "phantomdesk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A browser-local maintenance review desk with revision-bound approval.",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

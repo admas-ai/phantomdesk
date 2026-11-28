@@ -1,0 +1,208 @@
+{
+  "state": "Executed domain, real IndexedDB and documented UI checks; remaining scope explicit",
+  "cases": [
+    {
+      "id": "complete_request",
+      "when": "Valid fields",
+      "expected": "New unique ID and Needs review; never auto-approved",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "missing_unit",
+      "when": "Unit empty or whitespace",
+      "expected": "Needs information; no approval",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "possible_leak",
+      "when": "Sample rule matches description",
+      "expected": "Rule ID and priority suggestion shown; human approval required",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "duplicate",
+      "when": "Normalized address/unit/category match",
+      "expected": "Flag both; count unchanged",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "unsupported_service",
+      "when": "Category absent from catalog",
+      "expected": "Out of scope; unsent draft only",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "manual_priority",
+      "when": "Change value with reason",
+      "expected": "New version and before/after history",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "priority_without_reason",
+      "when": "Empty reason",
+      "expected": "Reject without mutation",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "refresh",
+      "when": "Commit then reload",
+      "expected": "Same fields, flags, version and history",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "failed_storage",
+      "when": "Transaction aborts",
+      "expected": "Store unchanged; draft retained; no Saved claim",
+      "result": "partially_verified",
+      "evidence": "Real IndexedDB rollback passed; UI retained a draft on NOT_FOUND rejection. Injected transaction-abort UI path remains unverified."
+    },
+    {
+      "id": "stale_edit",
+      "when": "Expected version older than current",
+      "expected": "Reject conflict, no lost update",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "html_payload",
+      "when": "Text contains script or image event",
+      "expected": "Display inert text",
+      "result": "partially_verified",
+      "evidence": "Domain inert-data test passed and UI uses text nodes; active browser payload check remains unverified."
+    },
+    {
+      "id": "bad_import",
+      "when": "Malformed JSON or invalid schema",
+      "expected": "Reject atomically",
+      "result": "deferred",
+      "scope": "deferred",
+      "deferred_reason": "General JSON import is not included in the first working slice."
+    },
+    {
+      "id": "future_schema",
+      "when": "Persisted browser data has an unknown newer schema version",
+      "expected": "Reject opening the incompatible data without erasing or rewriting it",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "approved_edit",
+      "when": "Change approved field",
+      "expected": "New saved revision requires review; old approval snapshot remains immutable; current record cannot be exported until reapproved",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "csv_formula",
+      "when": "Cell starts with =,+,-,@ or control chars",
+      "expected": "Neutralize formula and escape field",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "csv_escaping",
+      "when": "Commas quotes and newlines",
+      "expected": "Valid round-trippable CSV",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "export_filter",
+      "when": "Mix current approved, incomplete, unresolved and edited formerly approved records",
+      "expected": "Export only complete and resolved current saved revisions with matching approval; include exact approved instructions and revision",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "keyboard",
+      "when": "Complete workflow without pointer",
+      "expected": "Visible focus, reachable controls, managed dialog focus",
+      "result": "partially_verified",
+      "evidence": "Keyboard creation, save and approval verified through Tab/Enter in a narrow frame. Broader dialog/export coverage remains unverified."
+    },
+    {
+      "id": "mobile",
+      "when": "360px viewport and 200% zoom",
+      "expected": "No clipped primary controls or horizontal page overflow",
+      "result": "partially_verified",
+      "evidence": "360px embedded viewport verified with no document overflow and fitting controls. Actual 200% browser zoom remains unverified."
+    },
+    {
+      "id": "reduced_motion",
+      "when": "OS preference enabled",
+      "expected": "No decorative animation; no loss of state information",
+      "result": "not_run",
+      "evidence": "CSS support is present; preference-specific browser verification remains open."
+    },
+    {
+      "id": "stale_export_preview",
+      "when": "Preview an approved revision, then edit it before downloading",
+      "expected": "Block the stale selection; identify the changed request and require an updated preview; never export its old approval as current",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "duplicate_after_approval",
+      "when": "Approve A, then create or edit B to match A address, unit and category",
+      "expected": "Atomically add unresolved duplicate conditions, advance affected revisions, invalidate approvals and append history; preserve both records",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "duplicate_resolution_scope",
+      "when": "Resolve A/C with a reason, approve A, then introduce new matching B",
+      "expected": "The A/C reason does not resolve A/B; A requires review and cannot be exported",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "cross_record_transaction_failure",
+      "when": "Abort a transaction that would introduce a duplicate on an approved request",
+      "expected": "All affected records, revisions, approvals and histories remain at their prior committed values; keep the attempted draft unsaved",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "storage_retry_history",
+      "when": "Retry the same user intent after a failed transaction",
+      "expected": "Commit each intended state transition and history event once; no duplicated records or events",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "approval_requires_saved",
+      "when": "Attempt to approve or export while relevant visible fields are unsaved",
+      "expected": "Require a successful save and review of that saved revision; do not imply unsaved values were approved or exported",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "demo_workspace_isolation",
+      "when": "Create a record in the empty workspace, then reset the synthetic demonstration",
+      "expected": "Only demo records reset; user workspace data and approval history remain unchanged",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    },
+    {
+      "id": "approved_csv_instructions",
+      "when": "Approve a revision with specific instructions, download CSV and reload",
+      "expected": "Downloaded instructions, request ID, approved revision and approval time correspond to the saved approval; reloaded history retains the snapshot",
+      "result": "passed",
+      "evidence": "See tests/domain.test.js, docs/evidence/browser-checks-2026-11-25.json and the scoped UI observations in docs/BUILD-STATUS.md."
+    }
+  ],
+  "preparation_date": "2026-11-25",
+  "requirements_source_commit": "3bee735b586631e3eceeebc5941f269346ca6ffe",
+  "deferred_features": [
+    "General JSON import is outside the first working slice; do not expose an import control."
+  ],
+  "verification_date": "2026-11-25"
+}

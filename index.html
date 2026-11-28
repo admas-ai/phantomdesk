@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#271c2a">
+  <meta name="description" content="A maintenance review desk where approval belongs to the exact saved revision. Change the instructions, break the seal.">
+  <title>PhantomDesk — the review desk</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./ui/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the review desk</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="PhantomDesk navigation">
+      <a class="brand" href="./" aria-label="PhantomDesk home">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 38V22c0-9 5-16 12-16s12 7 12 16v16l-6-4-6 4-6-4-6 4Z"/><path d="M19 21v4m10-4v4M19 31h10"/></svg>
+        <span>Phantom<span class="brand-second">Desk</span></span>
+      </a>
+      <p class="sidebar-kicker">THE NIGHT SHIFT</p>
+      <nav class="side-nav">
+        <a href="#main" class="nav-item active" aria-current="page"><span aria-hidden="true">▤</span> Review desk</a>
+        <button type="button" class="nav-item" data-open-rules><span aria-hidden="true">◇</span> The rulebook</button>
+        <button type="button" class="nav-item" data-open-about><span aria-hidden="true">ⓘ</span> About this desk</button>
+      </nav>
+      <div class="sidebar-note"><span class="small-seal" aria-hidden="true">✓</span><p>Old approvals<br>shouldn’t haunt<br>new instructions.</p></div>
+      <div class="device-note"><span class="device-dot" aria-hidden="true"></span><strong>On this device</strong><p>Your work stays in this browser. Export a copy before clearing browser data.</p></div>
+      <p class="sidebar-footer">A little spooky. Very specific.</p>
+    </aside>
+
+    <main id="main" class="workspace" tabindex="-1">
+      <header class="page-header">
+        <div><p class="eyebrow">THE NIGHT-SHIFT RECORDS OFFICE</p><h1>The review desk<span class="heading-dot">.</span></h1><p class="page-subtitle">Every instruction deserves a current approval.</p></div>
+        <div class="header-actions"><button id="export-open" disabled class="button button-secondary" type="button">Export approved</button><button id="new-request" disabled class="button button-primary" type="button"><span aria-hidden="true">＋</span> New request</button></div>
+      </header>
+
+      <section class="workspace-bar" aria-label="Choose workspace">
+        <div class="workspace-switch" role="group" aria-label="Workspace"><button type="button" data-workspace="demo" disabled aria-pressed="true">Synthetic demo</button><button type="button" data-workspace="mine" disabled aria-pressed="false">Your workspace</button></div>
+        <div id="workspace-description" class="workspace-description">Made-up requests. A real review workflow.</div>
+        <button id="reset-demo" disabled type="button" class="text-button">Reset demo</button>
+      </section>
+
+      <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+
+      <div id="desk" class="desk">
+        <section class="queue-panel" aria-labelledby="queue-title">
+          <div class="queue-heading"><div><p class="eyebrow">INCOMING &amp; IN REVIEW</p><h2 id="queue-title">The request ledger</h2></div><span id="record-count" class="count-badge">0</span></div>
+          <label class="search-wrap"><span class="sr-only">Search requests</span><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Find a request…" autocomplete="off"></label>
+          <div class="filters" role="group" aria-label="Filter requests"><button type="button" data-filter="all" aria-pressed="true">All</button><button type="button" data-filter="review" aria-pressed="false">To review</button><button type="button" data-filter="approved" aria-pressed="false">Approved</button></div>
+          <div id="request-list" class="request-list"><div class="empty-state"><span class="empty-icon" aria-hidden="true">◇</span><h3>Opening the ledger</h3><p>Reading this browser’s saved workspace.</p></div></div>
+          <div class="queue-footnote"><span aria-hidden="true">✧</span> An approval always belongs to one saved revision.</div>
+        </section>
+        <section id="editor" class="editor-panel" aria-label="Selected request"></section>
+        <aside id="export-panel" class="export-panel" aria-labelledby="export-title" hidden></aside>
+      </div>
+      <footer class="workspace-footer"><span>Browser-local prototype · Reviewer labels are not authenticated identities.</span><button type="button" class="text-button" data-open-about>How this desk works</button></footer>
+    </main>
+  </div>
+
+  <dialog id="rules-dialog" class="app-dialog wide-dialog" aria-labelledby="rules-title"><div class="dialog-heading"><div><p class="eyebrow">NOTHING HIDING IN THE WALLS</p><h2 id="rules-title">The rulebook</h2></div><button class="icon-button" type="button" data-close-dialog aria-label="Close rulebook">×</button></div><p class="dialog-intro">Simple rules, visible reasons, a person’s decision.</p><div class="rule-list"><section><div><h3>Complete the request</h3><p>Address, unit, supported service category, work instructions, and preferred time must be present before approval.</p></div></section><section><div><h3>Keep both possible duplicates</h3><p>Matching address, unit, and category trigger a review condition. Spaces and letter case are normalized. Review each affected request and record a reason; nothing is automatically merged or deleted.</p><code>PD-DUP-001</code></div></section><section><div><h3>Review a possible leak</h3><p>The sample leak rule suggests higher priority. It is a demonstration rule, not an emergency assessment. A person still reviews and approves the work.</p><code>PD-LEAK-001</code></div></section><section><div><h3>Approve this revision</h3><p>Relevant changes break the current approval seal. Previous approvals remain in history. A new matching request also needs a new review.</p></div></section><section><div><h3>Check again at download</h3><p>An export preview does not authorize later changes. Download checks the latest saved revisions and blocks a stale selection.</p></div></section></div><div class="dialog-actions"><button class="button button-primary" type="button" data-close-dialog>Back to the desk</button></div></dialog>
+
+  <dialog id="about-dialog" class="app-dialog" aria-labelledby="about-title"><div class="dialog-heading"><div><p class="eyebrow">A SMALL, LOCAL PROTOTYPE</p><h2 id="about-title">About this desk</h2></div><button class="icon-button" type="button" data-close-dialog aria-label="Close about this desk">×</button></div><p>PhantomDesk connects an approval to the exact saved instructions a person reviewed.</p><div class="about-card"><h3>Saved in this browser</h3><p>Records are stored on this device in this browser. There are no accounts, shared workspaces, or server backups. Clearing browser data can remove your records.</p></div><div class="about-card"><h3>A deliberate review step</h3><p>Reviewer names are local labels, not verified identities. This prototype does not assign, send, or dispatch work. Its history is not protected against someone changing the device’s storage.</p></div><div class="about-card"><h3>Two separate workspaces</h3><p>The synthetic demo contains made-up examples. Your workspace starts empty. Resetting the demo does not change your workspace.</p></div><div class="dialog-actions"><button class="button button-primary" type="button" data-close-dialog>Understood</button></div></dialog>
+
+  <dialog id="confirm-dialog" class="app-dialog small-dialog" aria-labelledby="confirm-title"><p class="eyebrow">ONE QUICK CHECK</p><h2 id="confirm-title"></h2><p id="confirm-body"></p><div class="dialog-actions"><button id="confirm-cancel" class="button button-secondary" type="button">Keep working</button><button id="confirm-accept" class="button button-primary" type="button">Continue</button></div></dialog>
+
+  <dialog id="priority-dialog" class="app-dialog small-dialog" aria-labelledby="priority-title"><div class="dialog-heading"><div><p class="eyebrow">A REVIEWER’S DECISION</p><h2 id="priority-title">Change priority</h2></div><button class="icon-button" type="button" data-close-dialog aria-label="Close change priority">×</button></div><form id="priority-form"><label class="field"><span>Priority</span><select id="priority-value"><option value="normal">Normal</option><option value="high">High</option></select></label><label class="field"><span>Reason for this change</span><textarea id="priority-reason" rows="3" required placeholder="Explain the decision for the next reviewer."></textarea></label><p class="field-help">Saving creates a new revision that needs approval.</p><p id="priority-error" class="form-error" role="alert"></p><div class="dialog-actions"><button class="button button-secondary" type="button" data-close-dialog>Cancel</button><button id="priority-submit" class="button button-primary" type="submit">Save priority decision</button></div></form></dialog>
+  <noscript><div class="noscript-message">PhantomDesk needs JavaScript to open its browser-local request ledger.</div></noscript>
+</body>
+</html>
