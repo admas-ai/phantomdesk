@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>PhantomDesk · Browser storage checks</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; color: #172332; background: #f3f5f8; line-height: 1.55; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 980px; margin: 0 auto; padding: 40px 20px 64px; }
+    .eyebrow { margin: 0; color: #485a73; font-size: .78rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { font-size: clamp(1.7rem, 4vw, 2.5rem); line-height: 1.15; margin: 10px 0 16px; }
+    p { max-width: 76ch; }
+    .notice { padding: 16px 18px; border-left: 4px solid #4969b6; border-radius: 4px; background: #e7edf9; }
+    .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin: 24px 0; }
+    button { font: inherit; font-weight: 700; cursor: pointer; padding: 12px 22px; color: #fff; background: #273f83; border: 2px solid #273f83; border-radius: 9px; }
+    button:disabled { opacity: .6; cursor: wait; }
+    button:focus-visible, summary:focus-visible, a:focus-visible { outline: 3px solid #c16c00; outline-offset: 4px; }
+    #summary { font-weight: 750; }
+    #run-context { color: #485a73; font-size: .9rem; }
+    ol { list-style: none; padding: 0; display: grid; gap: 12px; }
+    .test { background: #fff; border: 1px solid #c9d2df; border-radius: 10px; padding: 16px 18px; }
+    .test-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    h2 { margin: 0; font-size: 1.02rem; }
+    .badge { font-size: .78rem; font-weight: 800; padding: 2px 9px; border: 1px solid currentColor; border-radius: 20px; white-space: nowrap; }
+    .test p { font-size: .9rem; color: #485a73; margin: 7px 0 0; }
+    .pass { border-left: 5px solid #187347; }
+    .pass .badge { color: #14633e; }
+    .fail { border-left: 5px solid #a82537; }
+    .fail .badge { color: #a82537; }
+    .running { border-left: 5px solid #273f83; }
+    details { margin-top: 12px; }
+    summary { cursor: pointer; font-weight: 650; }
+    pre { padding: 14px; margin-bottom: 0; border-radius: 6px; background: #edf1f7; color: #172332; white-space: pre-wrap; overflow-wrap: anywhere; font-size: .82rem; line-height: 1.5; }
+    .scope { margin-top: 26px; font-size: .9rem; color: #485a73; }
+    a { color: #273f83; }
+    @media (prefers-color-scheme: dark) {
+      :root { color: #ecf1f8; background: #111823; }
+      .eyebrow, #run-context, .test p, .scope { color: #b9c6d8; }
+      .notice { background: #1d2c49; border-color: #91aaff; }
+      .test { background: #1a2535; border-color: #42516b; }
+      .pass { border-left-color: #6dde9f; }
+      .pass .badge { color: #6dde9f; }
+      .fail { border-left-color: #ff9eaa; }
+      .fail .badge { color: #ff9eaa; }
+      .running { border-left-color: #91aaff; }
+      pre { color: #ecf1f8; background: #101a28; }
+      a { color: #acc0ff; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">PhantomDesk · Local verification</p>
+    <h1>Browser storage checks</h1>
+    <p class="notice">These checks run the real repository against <strong>this browser’s IndexedDB</strong>.
+      Each uses a unique disposable database whose name starts with <code>phantomdesk-test-</code>.
+      The application database is never opened by this page.</p>
+    <p>Checks cover durable approvals, conflicting edits, failed transactions, isolated demo resets,
+      incompatible saved data, and export freshness. They use wholly synthetic requests.</p>
+    <div class="controls">
+      <button id="run-tests" type="button">Run browser checks</button>
+      <span id="summary" role="status" aria-live="polite">9 checks ready. Not run.</span>
+    </div>
+    <p id="run-context">No checks have run in this browser yet.</p>
+    <ol id="tests" aria-label="Browser check results"></ol>
+    <details id="report-details">
+      <summary>Full run report</summary>
+      <pre id="report">Not run.</pre>
+    </details>
+    <p class="scope"><strong>Scope:</strong> a pass confirms these repository and IndexedDB behaviors in this browser.
+      It does not verify the application’s interface, keyboard navigation, mobile layout, or download controls.</p>
+    <p><a href="../">Return to PhantomDesk</a></p>
+  </main>
+  <script type="module" src="./browser.js"></script>
+</body>
+</html>
